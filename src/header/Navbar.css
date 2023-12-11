@@ -1,25 +1,27 @@
+/* Navbar.css */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-nav {
+.navbar {
   background-color: orange;
   color: #fff;
   padding: 10px;
   display: flex;
   font-weight: bold;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-nav a {
-  color: #000000;
+.navbar a {
+  color: black;
   text-decoration: none;
   margin: 0 15px;
 }
 
-nav img {
+.navbar img {
   height: 40px;
   width: auto;
 }
@@ -31,23 +33,40 @@ nav img {
   margin-right: 20px;
 }
 
-input[type="text"] {
-  padding: 5px;
-  border: none;
-  border-radius: 2px;
-  border-color: 1px solid black;
+.search-input {
+  padding: 5px; /* Adjust padding for smaller size */
+  border: 2px solid white;
+  border-radius: 5px;
+  background-image: url("https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-search-desktop.svg?v=114869412250897726531690205645");
+  background-position: 10px center;
+  background-size: 20px; /* Make the icon a bit smaller */
+  background-repeat: no-repeat;
+  padding-left: 35px; /* Adjust padding-left for space between icon and text */
+  margin-right: 5px; /* Add space between icon and text */
+  width: calc(100% - 45px); /* Adjust width for smaller screens */
+  text-align: center; /* Center text */
 }
 
-.cart-icon {
+.wishlist-icon,
+.cart-icon,
+.login,
+.flag {
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-right: 5px; /* Adjust space between icons */
 }
 
+.wishlist-icon img,
 .cart-icon img {
-  height: 30px;
+  height: 25px;
   width: auto;
   margin-right: 5px;
+  cursor: pointer;
+}
+
+.wishlist-text {
+  font-size: 14px;
+  color: black; /* Set the color to black */
   cursor: pointer;
 }
 
@@ -59,10 +78,162 @@ input[type="text"] {
   font-size: 12px;
 }
 
-.flag {
+.flag img {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 320px) {
+  .navbar {
+    background-color: orange; /* Set background color for smaller screens */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .navbar img {
+    height: 15px; /* Adjust logo size for smaller screens */
+    margin-right: 3px;
+  }
+
+  .navbar a {
+    margin: 3px 3px;
+    font-size: 8px; /* Adjust text size */
+  }
+
+  .search-bar {
+    margin: 3px 3px;
+  }
+
+  .search-input {
+    width: calc(100% - 45px); /* Adjust width for smaller screens */
+    padding: 1px; /* Adjust padding */
+    background-size: 20px; /* Adjust icon size */
+    padding-left: 35px; /* Adjust as needed based on the icon size */
+    font-size: 6px; /* Adjust text size */
+    text-align: center; /* Center text */
+  }
+
+  .wishlist-text,
+  .flag,
+  .cart-count {
+    display: none; /* Hide wishlist text, India flag, and cart count */
+  }
+}
+/* Navbar.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: orange;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  font-weight: bold;
+  width: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.navbar img {
+  height: 40px;
+  width: auto;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
   margin-right: 20px;
+}
+
+.search-input {
+  padding: 5px; /* Adjust padding for smaller size */
+  border: 2px solid white;
+  border-radius: 5px;
+  background-image: url("https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-search-desktop.svg?v=114869412250897726531690205645");
+  background-position: 10px center;
+  background-size: 20px; /* Make the icon a bit smaller */
+  background-repeat: no-repeat;
+  padding-left: 35px; /* Adjust padding-left for space between icon and text */
+  margin-right: 5px; /* Add space between icon and text */
+  width: calc(100% - 45px); /* Adjust width for smaller screens */
+  text-align: center; /* Center text */
+}
+
+.wishlist-icon,
+.cart-icon,
+.login,
+.flag {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.wishlist-icon img,
+.cart-icon img {
+  height: 22px; /* Set the height to the desired size */
+  width: auto;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.wishlist-text {
+  font-size: 14px;
+  color: black; /* Set the color to black */
+  cursor: pointer;
+}
+
+.cart-count {
+  background-color: black;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 50%;
+  font-size: 12px;
 }
 
 .flag img {
   border-radius: 50%;
+}
+
+@media screen and (max-width: 320px) {
+  .navbar {
+    background-color: orange; /* Set background color for smaller screens */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .navbar img {
+    height: 15px; /* Adjust logo size for smaller screens */
+    margin-right: 3px;
+  }
+
+  .navbar a {
+    margin: 3px 3px;
+    font-size: 8px; /* Adjust text size */
+  }
+
+  .search-bar {
+    margin: 3px 3px;
+  }
+
+  .search-input {
+    width: calc(100% - 45px); /* Adjust width for smaller screens */
+    padding: 1px; /* Adjust padding */
+    background-size: 20px; /* Adjust icon size */
+    padding-left: 35px; /* Adjust as needed based on the icon size */
+    font-size: 6px; /* Adjust text size */
+    text-align: center; /* Center text */
+  }
+
+  .wishlist-text,
+  .flag,
+  .cart-count {
+    display: none; /* Hide wishlist text, India flag, and cart count */
+  }
 }
