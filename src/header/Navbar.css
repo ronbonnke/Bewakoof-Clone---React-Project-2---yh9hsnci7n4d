@@ -1,4 +1,3 @@
-/* Navbar.css */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,49 +8,51 @@ nav {
   color: #fff;
   padding: 10px;
   display: flex;
+  font-weight: bold;
   justify-content: space-between;
   align-items: center;
 }
 
 nav a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   margin: 0 15px;
 }
 
 nav img {
-  height: 40px; /* Adjust the height as needed */
+  height: 40px;
   width: auto;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Move search bar to the right */
-  margin-right: 20px; /* Add margin to create space between search bar and cart icon */
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 input[type="text"] {
   padding: 5px;
   border: none;
   border-radius: 2px;
-  border-color: 2px solid black;
+  border-color: 1px solid black;
 }
 
 .cart-icon {
   display: flex;
   align-items: center;
-  margin-left: 20px; /* Add margin to create space between search bar and cart icon */
+  margin-left: 20px;
 }
 
 .cart-icon img {
-  height: 30px; /* Adjust the height as needed */
+  height: 30px;
   width: auto;
-  margin-right: 5px; /* Add margin between cart icon and count */
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 .cart-count {
-  background-color: red;
+  background-color: black;
   color: #fff;
   padding: 3px 6px;
   border-radius: 50%;
@@ -59,7 +60,7 @@ input[type="text"] {
 }
 
 .flag {
-  margin-right: 20px; /* Add margin to create space between flag and cart icon */
+  margin-right: 20px;
 }
 
 .flag img {
