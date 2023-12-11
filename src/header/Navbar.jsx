@@ -47,7 +47,7 @@ const Navbar = () => {
 
       {/* Login */}
       <div className="login">
-        <a href="/">LOGIN</a>
+        <a href="/">Login</a>
       </div>
 
       {/* Flag */}
