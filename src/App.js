@@ -1,22 +1,20 @@
 import "./App.css";
 import Navbar from "./header/Navbar";
+import Footer from "./footer/Footer";
+import Homepage from "./pages/Homepage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <div className="my-webpage">
+      <div className="my-header">
         <Navbar />
         <Routes>
-          <Route path="/men">Men</Route>
-          <Route path="/women">Women</Route>
-          <Route path="/MobileCovers">MobileCovers</Route>
-          <Route path="/Search">Search</Route>
-          <Route path="/wishlist">Wishlist</Route>
-          <Route path="/Cart">Cart</Route>
-          <Route path="/login">Login</Route>
-          <Route path="/logout">Logout</Route>
+          <Route path="/" element={<Homepage />} />
         </Routes>
+      </div>
+      <div className="my-footer">
+        <Footer />
       </div>
     </Router>
   );
