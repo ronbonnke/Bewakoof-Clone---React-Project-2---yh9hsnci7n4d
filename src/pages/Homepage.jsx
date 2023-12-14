@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/homepage/Homepage.css"
-import Category from '../components/Category';
+import CategoryProduct from '../components/CategoryProduct';
 
 const Homepage = () => {
   const [clothes, setClothes] = useState([]);
@@ -70,7 +70,7 @@ const Homepage = () => {
         <button className="slider-arrow slider-arrow-right" onClick={handleNext}>&gt;</button>
       </div>
       <div>
-        < Category />
+        < CategoryProduct />
       </div>
     </div>
   );
