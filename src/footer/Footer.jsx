@@ -1,48 +1,5 @@
-// // Footer.js
-// import React from 'react';
-// import './Footer.css';
-
-// const Footer = () => {
-//   return (
-//     <footer className="footer">
-//       <div className="footer-content">
-//         <div className="footer-section">
-//           
-//         </div>
-
-//         <div className="footer-section">
-//           <h3>Quick Links</h3>
-//           <a >Offers</a>
-//           <a >Sitemap</a>
-//           <a >Fanbook</a>
-//         </div>
-
-//         <div className="footer-section">
-//           <h3>Get updates on your inbox</h3>
-//           <input type="text" placeholder="Enter your email address" />
-//           <button>Subscribe</button>
-//         </div>
-//       </div>
-
-//       <div className="copyright">
-//         <p>4.7M People like this</p>
-//         <p>1M Followers</p>
-//         <p>&copy; 2023 Your Company Name. All rights reserved.</p>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
-
-
-// Footer.js
-
-
-
 import React from 'react';
-import './Footer.css';
+import '../styles/footer/Footer.css';
 
 const Footer = () => {
   return (

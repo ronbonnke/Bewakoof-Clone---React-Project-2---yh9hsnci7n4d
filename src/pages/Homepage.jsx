@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './Homepage.css';
+import "../styles/homepage/Homepage.css"
+import Category from '../components/Category';
 
 const Homepage = () => {
   const [clothes, setClothes] = useState([]);
@@ -63,9 +64,13 @@ const Homepage = () => {
               <img src={item.displayImage} alt={item.name} />
             </div>
           ))}
+          
         </div>
         <button className="slider-arrow slider-arrow-left" onClick={handlePrev}>&lt;</button>
         <button className="slider-arrow slider-arrow-right" onClick={handleNext}>&gt;</button>
+      </div>
+      <div>
+        < Category />
       </div>
     </div>
   );
