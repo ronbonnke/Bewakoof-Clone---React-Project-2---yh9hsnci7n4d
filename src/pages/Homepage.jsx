@@ -41,21 +41,15 @@ const Homepage = () => {
 
   const handleNext = () => {
     const nextIndex = startIndex + 3;
-    if (nextIndex < clothes.data.length) {
-      setStartIndex(nextIndex);
-    } else {
-      // Restart from the beginning when reaching the end
-      setStartIndex(0);
+    if (clothes.data && clothes.data.length > 0) {
+      setStartIndex(nextIndex >= clothes.data.length ? 0 : nextIndex);
     }
   };
-
+  
   const handlePrev = () => {
     const prevIndex = startIndex - 3;
-    if (prevIndex >= 0) {
-      setStartIndex(prevIndex);
-    } else {
-      // Go to the last set when reaching the beginning
-      setStartIndex(clothes.data.length - 3);
+    if (clothes.data && clothes.data.length > 0) {
+      setStartIndex(prevIndex < 0 ? clothes.data.length - 3 : prevIndex);
     }
   };
 

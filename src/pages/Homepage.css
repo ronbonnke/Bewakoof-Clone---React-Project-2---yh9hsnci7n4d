@@ -10,7 +10,7 @@
 
 .slider-item {
   display: flex;
-  transition: transform 0.8s ease-in-out; /* Adjust the transition time and timing function */
+  transition: transform 2s ease;
 }
 
 .slider-img {
