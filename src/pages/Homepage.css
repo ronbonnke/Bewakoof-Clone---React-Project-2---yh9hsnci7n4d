@@ -10,11 +10,11 @@
 
 .slider-item {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s ease-in-out; /* Adjust the transition time and timing function */
 }
 
 .slider-img {
-  flex: 0 0 33.33%; /* Adjust this value based on the number of visible items you want */
+  flex: 0 0 33.33%;
 }
 
 .slider img {
@@ -31,13 +31,13 @@
   color: black;
   background-color: lightgray;
   border: none;
-  border-radius: 50%; /* Make it circular */
-  width: 20px; /* Set the width and height to the same value for a perfect circle */
-  height: 20px; /* Adjust the size as needed */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .slider-arrow-left {

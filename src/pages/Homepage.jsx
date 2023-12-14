@@ -20,19 +20,32 @@ const Homepage = () => {
         }
 
         const data = await response.json();
-        setClothes(data);
+        // Duplicate the existing data to create more images
+        const duplicatedData = [...data.data, ...data.data, ...data.data, ...data.data];
+        setClothes({ data: duplicatedData });
       } catch (error) {
         console.error('Error fetching best sellers:', error.message);
       }
     };
 
     fetchBestSellers();
-  }, []);
+
+    // Auto slide every 5 seconds
+    const intervalId = setInterval(() => {
+      handleNext();
+    }, 5000);
+
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, [startIndex]); // Add startIndex as a dependency to avoid potential issues
 
   const handleNext = () => {
     const nextIndex = startIndex + 3;
     if (nextIndex < clothes.data.length) {
       setStartIndex(nextIndex);
+    } else {
+      // Restart from the beginning when reaching the end
+      setStartIndex(0);
     }
   };
 
@@ -40,6 +53,9 @@ const Homepage = () => {
     const prevIndex = startIndex - 3;
     if (prevIndex >= 0) {
       setStartIndex(prevIndex);
+    } else {
+      // Go to the last set when reaching the beginning
+      setStartIndex(clothes.data.length - 3);
     }
   };
 
