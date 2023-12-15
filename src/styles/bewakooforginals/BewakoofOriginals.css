@@ -1,0 +1,61 @@
+/* BewakoofOriginals.css */
+
+.bewakoof-originals-heading {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bewakoof-originals-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column; /* Updated to column direction */
+  overflow: hidden;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+}
+
+.bewakoof-originals-slider {
+  display: flex;
+  transition: transform 1.2s ease-in-out;
+}
+
+.bewakoof-originals-item {
+  flex-shrink: 0;
+  margin: 0 10px;
+}
+
+.bewakoof-originals-image-container {
+  height: 600px;
+  width: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.bewakoof-originals-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.8s;
+}
+
+.bewakoof-originals-dots {
+  display: flex;
+  margin-top: 10px; /* Added margin to separate images and dots */
+}
+
+.bewakoof-originals-dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.bewakoof-originals-dot.active {
+  background-color: #333;
+}

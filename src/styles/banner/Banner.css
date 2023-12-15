@@ -1,0 +1,12 @@
+.banner-container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}

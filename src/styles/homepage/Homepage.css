@@ -1,6 +1,7 @@
 /* Homepage.css */
 .homepage {
   text-align: center;
+  font-weight: bolder;
 }
 
 .slider {
@@ -10,7 +11,7 @@
 
 .slider-item {
   display: flex;
-  transition: transform 2s ease;
+  transition: transform 1.7s ease;
 }
 
 .slider-img {
@@ -37,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
 }
 
 .slider-arrow-left {

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import "../styles/homepage/Homepage.css"
 import CategoryProduct from '../components/CategoryProduct';
 import ProductType from '../components/ProductType';
+import Banner from '../components/Banner';
+import TrendingCategories from '../components/TrendingCategories';
+import BewakoofOriginals from '../components/BewakoofOriginals';
 
 const Homepage = () => {
   const [clothes, setClothes] = useState([]);
@@ -13,7 +16,7 @@ const Homepage = () => {
         const response = await fetch('https://academics.newtonschool.co/api/v1/ecommerce/clothes/products', {
           method: 'GET',
           headers: {
-            'projectId': '{{ntymfpzixzjc}}',
+            'projectId': 'ntymfpzixzjc',
           },
         });
 
@@ -61,7 +64,7 @@ const Homepage = () => {
       <div>
         <ProductType />
       </div>
-      <h2>Best Sellers</h2>
+      <h2>BEST SELLERS</h2>
       <div className="slider">
         <div className="slider-item" style={{ transform: `translateX(-${startIndex * (100 / 3)}%)` }}>
           {clothes.data && clothes.data.map((item) => (
@@ -74,9 +77,10 @@ const Homepage = () => {
         <button className="slider-arrow slider-arrow-left" onClick={handlePrev}>&lt;</button>
         <button className="slider-arrow slider-arrow-right" onClick={handleNext}>&gt;</button>
       </div>
-      <div>
-        < CategoryProduct />
-      </div>
+      <div> <CategoryProduct /> </div>
+      <div> <Banner /> </div>
+      <div> <TrendingCategories /> </div>
+      <div> <BewakoofOriginals /> </div>
     </div>
   );
 };

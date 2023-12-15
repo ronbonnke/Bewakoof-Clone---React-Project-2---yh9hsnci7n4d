@@ -9,7 +9,6 @@ const categoryImages = [
   "https://shop.bewakoof.com/cdn/shop/files/thumbnails-Revamp-Customization--1--1693212866.webp?v=1695260332",
   "https://shop.bewakoof.com/cdn/shop/files/thumbnails-Revamp-Combos-1693212865.gif?v=1695260332",
   "https://shop.bewakoof.com/cdn/shop/files/thumbnails-Revamp-Vote-1693212866.webp?v=1695260331",
-  // Add more image URLs for each category
 ];
 
 const categoryTitles = [
@@ -18,7 +17,7 @@ const categoryTitles = [
   "Official Merch",
   "Customization",
   "Combos",
-  "Vote for Designs",
+  "Vote for Design",
   "T-Shirts",
   // Add more titles for each category
 ];

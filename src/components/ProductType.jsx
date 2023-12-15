@@ -17,7 +17,7 @@ const categoryImages = [
     "Sale",
     "Winterwear",
     "Official Merch",
-    "Customization",
+    "Custom",
     "Men",
     "Women",
     "Accessories",
