@@ -12,14 +12,25 @@ const categoryImages = [
   // Add more image URLs for each category
 ];
 
+const categoryTitles = [
+  "New Arrivals",
+  "Winterwear",
+  "Official Merch",
+  "Customization",
+  "Combos",
+  "Vote for Designs",
+  "T-Shirts",
+  // Add more titles for each category
+];
+
 function CategoryProduct() {
   return (
     <div className="category-container">
       {categoryImages.map((image, index) => (
         <div className="category-item" key={index}>
-          {`Category ${index + 1}`}
+          <div className="category-title">{categoryTitles[index]}</div>
           <div className="category-container-image">
-            <img src={image} alt={`Category ${index + 1}`} />
+            <img src={image} alt={categoryTitles[index]} />
           </div>
         </div>
       ))}

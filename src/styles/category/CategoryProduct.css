@@ -21,13 +21,14 @@
 }
 
 .category-container-image {
-  height: 100px;
+  height: 140px;
   width: 100px;
   background-color: lightblue;
   margin-top: 10px;
   overflow: hidden;
   border-radius: 5px;
-  border: 2px solid black;
+  object-fit: contain;
+  /* border: 2px solid black; */
 }
 
 .category-container-image img {

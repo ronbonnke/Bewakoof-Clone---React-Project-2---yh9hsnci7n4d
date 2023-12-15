@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/homepage/Homepage.css"
 import CategoryProduct from '../components/CategoryProduct';
+import ProductType from '../components/ProductType';
 
 const Homepage = () => {
   const [clothes, setClothes] = useState([]);
@@ -55,7 +56,11 @@ const Homepage = () => {
   };
 
   return (
+  
     <div className="homepage">
+      <div>
+        <ProductType />
+      </div>
       <h2>Best Sellers</h2>
       <div className="slider">
         <div className="slider-item" style={{ transform: `translateX(-${startIndex * (100 / 3)}%)` }}>
