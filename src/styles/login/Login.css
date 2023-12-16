@@ -1,0 +1,90 @@
+/* Login.css */
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  margin: auto;
+  border: 2px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 65px;
+  margin-top: 65px;
+}
+
+form {
+  text-align: center;
+  /* border: 2px solid grey; */
+  border-radius: 8px;
+  padding: 15px;
+  padding-top: 20px;
+}
+
+.logo {
+  height: 60px;
+  border-bottom: 2px solid grey;
+  margin-bottom: 10px;
+}
+
+.heading {
+  color: #363636;
+  font-size: 25px;
+}
+
+.input-box {
+  margin: 8px;
+  height: 40px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1.6px solid lightgrey;
+  text-align: center;
+}
+
+.error {
+  color: #666;
+  margin: 8px;
+}
+
+.login-button {
+  cursor: pointer;
+  margin: 8px;
+  height: 50px;
+  width: 80%;
+  font-size: bolder;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-top: 20px;
+  color: grey;
+  background: #ccc;
+  font-weight: bolder;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-button,
+.forgot-button {
+  margin: 8px;
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    width: 100%;
+    max-width: 280px;
+    height: 450px;
+    /* margin: auto; */
+    border: 2px solid #333;
+
+    overflow: hidden;
+    margin-bottom: 65px;
+    margin-top: 65px;
+  }
+  form {
+    text-align: center;
+    padding: 15px;
+    padding-top: 20px;
+  }
+}

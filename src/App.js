@@ -3,6 +3,7 @@ import Navbar from "./header/Navbar";
 import Footer from "./footer/Footer";
 import Homepage from "./pages/Homepage";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
       <div className="my-footer">
