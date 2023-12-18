@@ -145,6 +145,7 @@ import React, { useState } from "react";
 import "../styles/login/Login.css";
 import axios from "../API/axios";
 import { Link } from "react-router-dom";
+import { useCurrentContext } from "../context/CurrentProvider";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -153,6 +154,10 @@ const Login = () => {
   const [error, setError] = useState("");
   const [color, setColor] = useState("");
   const [login, setLogin] = useState("");
+
+  const {setLoginStatus,loginStatus} = useCurrentContext();
+
+  console.log("loginStatus",loginStatus)
 
   const handlePassword = (event) => {
     setPassword(event.target.value);
@@ -194,6 +199,7 @@ const Login = () => {
             setColor("green");
             setLogin(true);
             navigate("/");
+            setLoginStatus(true);
           } else {
             console.error("Registration Failed");
             setError("Incorrect Email or password");

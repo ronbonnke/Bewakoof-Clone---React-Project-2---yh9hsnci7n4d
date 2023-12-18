@@ -199,6 +199,13 @@ body {
 .flag img {
   border-radius: 50%;
 }
+.navbar .login button {
+  background: none;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+}
 
 @media screen and (max-width: 320px) {
   .navbar {

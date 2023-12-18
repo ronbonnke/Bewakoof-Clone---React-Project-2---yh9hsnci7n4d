@@ -1,8 +1,19 @@
 import React from 'react';
 import '../styles/navbar/Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
+import { useCurrentContext } from '../context/CurrentProvider';
+
+
 
 const Navbar = () => {
+  const navigate = useNavigate(); 
+  const {loginStatus, setLoginStatus} = useCurrentContext();
+  const handleLogout = () => {
+    localStorage.clear();
+    setLoginStatus(false);
+    navigate('/login');
+  }
+
   return (
     <nav className="navbar">
       {/* Logo */}
@@ -47,7 +58,15 @@ const Navbar = () => {
 
       {/* Login */}
       <div className="login">
-        <Link to={"/login"}>Login</Link>
+        {/* <Link to={"/login"}> */}
+        {loginStatus ? (
+        <button onClick={handleLogout}>Logout</button>
+      ) : (
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+      )}
+          
       </div>
 
       {/* Flag */}

@@ -5,11 +5,14 @@ import ProductType from '../components/ProductType';
 import Banner from '../components/Banner';
 import TrendingCategories from '../components/TrendingCategories';
 import BewakoofOriginals from '../components/BewakoofOriginals';
+// import { useCurrentContext } from '../context/CurrentProvider';
 
 const Homepage = () => {
   const [clothes, setClothes] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
-
+  // const {Number, setNum} = useCurrentContext();
+  // console.log("num",Number);
+  // setNum(false);
   useEffect(() => {
     const fetchBestSellers = async () => {
       try {
