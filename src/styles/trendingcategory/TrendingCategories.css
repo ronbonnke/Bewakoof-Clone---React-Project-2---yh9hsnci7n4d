@@ -34,3 +34,40 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 320px) {
+  .trending-categories-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .trending-categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    overflow-x: auto;
+  }
+
+  .trending-categories-item {
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .trending-categories-image-container {
+    height: 80px;
+    width: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .trending-categories-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

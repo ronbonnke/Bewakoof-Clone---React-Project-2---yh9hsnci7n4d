@@ -212,6 +212,7 @@ body {
     background-color: orange; /* Set background color for smaller screens */
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
   }
 
   .navbar img {
