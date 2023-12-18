@@ -4,6 +4,7 @@ import Footer from "./footer/Footer";
 import Homepage from "./pages/Homepage";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import UpdatePassword from "./components/ForgotPassword";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/password" element={<UpdatePassword />} />
         </Routes>
       </div>
       <div className="my-footer">

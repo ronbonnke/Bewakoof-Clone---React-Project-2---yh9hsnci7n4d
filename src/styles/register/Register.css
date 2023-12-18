@@ -1,6 +1,6 @@
 /* Register.css */
 
-.container {
+.Register {
   width: 100%;
   max-width: 500px;
   height: 500px;
@@ -18,14 +18,17 @@ form {
 }
 
 .logo {
-  height: 60px;
+  height: 40px;
+  width: 400px;
   border-bottom: 2px solid grey;
   margin-bottom: 10px;
+  padding-bottom: 15px; /* Add padding to create space between the logo and the line */
 }
 
 .heading {
   color: #363636;
   font-size: 25px;
+  padding-bottom: 10px; /* Add padding to create space between the line and the heading */
 }
 
 .Inputbox {
@@ -44,16 +47,19 @@ form {
 
 .register-button {
   cursor: pointer;
-  margin: 8px;
+  margin: auto;
+  margin-top: 20px;
   height: 50px;
   width: 80%;
   font-size: bolder;
   border-radius: 5px;
   border: 1px solid grey;
-  margin-top: 20px;
   color: grey;
   background: #ccc;
   font-weight: bolder;
+  display: block;
+  text-align: center; /* Center the text horizontally */
+  line-height: 50px; /* Center the text vertically */
 }
 
 .link-span {

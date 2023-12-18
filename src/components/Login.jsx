@@ -211,7 +211,7 @@ const Login = () => {
   return (
     <div className="container">
       <form>
-        <div className="logo">
+        <div className="logo-logo">
           <img
             src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg"
             alt=""
