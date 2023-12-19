@@ -28,9 +28,7 @@ const Homepage = () => {
         }
 
         const data = await response.json();
-        // Duplicate the existing data to create more images
-        const duplicatedData = [...data.data, ...data.data, ...data.data, ...data.data];
-        setClothes({ data: duplicatedData });
+        setClothes(data);
       } catch (error) {
         console.error('Error fetching best sellers:', error.message);
       }

@@ -137,7 +137,7 @@ body {
 .navbar a {
   color: black;
   text-decoration: none;
-  margin: 0 15px;
+  /* margin: 0 15px; */
 }
 
 .navbar img {
@@ -178,7 +178,7 @@ body {
 .cart-icon img {
   height: 22px; /* Set the height to the desired size */
   width: auto;
-  margin-right: 5px;
+  /* margin-right: 5px; */
   cursor: pointer;
 }
 
@@ -209,33 +209,47 @@ body {
 
 @media screen and (max-width: 320px) {
   .navbar {
-    background-color: orange; /* Set background color for smaller screens */
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
+    background-color: orange;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%; /* Set width to 100% for smaller screens */
   }
 
   .navbar img {
-    height: 15px; /* Adjust logo size for smaller screens */
+    height: 12px;
     margin-right: 3px;
   }
 
   .navbar a {
-    margin: 3px 3px;
-    font-size: 8px; /* Adjust text size */
+    color: black;
+    font-size: 8px;
+    margin: 0 3px;
   }
 
   .search-bar {
-    margin: 3px 3px;
+    margin: 0 3px;
   }
 
   .search-input {
-    width: calc(100% - 45px); /* Adjust width for smaller screens */
-    padding: 1px; /* Adjust padding */
-    background-size: 15px; /* Adjust icon size */
-    padding-left: 35px; /* Adjust as needed based on the icon size */
-    font-size: 6px; /* Adjust text size */
-    text-align: center; /* Center text */
+    height: 20px;
+    width: 10px;
+    width: calc(100% - 40px);
+    /* padding: 1px; */
+    background-size: 15px;
+    margin-left: 20px;
+    font-size: 6px;
+    text-align: center;
+  }
+
+  .navbar .login button {
+    background: none;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0;
   }
 
   .wishlist-text,
