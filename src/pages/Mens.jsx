@@ -10,7 +10,7 @@ const Mens = () => {
     const fetchMensClothes = async () => {
       try {
         const response = await fetch(
-          'https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?gender=Men',
+          'https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?gender=Men&limit=51',
           {
             method: 'GET',
             headers: {
@@ -25,6 +25,7 @@ const Mens = () => {
 
         const data = await response.json();
         setMensClothes(data.data);
+
         setLoading(false);
       } catch (error) {
         console.error('Error fetching men\'s clothes:', error.message);

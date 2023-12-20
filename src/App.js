@@ -11,6 +11,8 @@ import Mens from "./pages/Mens";
 import Womens from "./pages/Womens";
 // import Details from "./components/Details";
 import Product from "./pages/Product";
+import ComingSoon from "./pages/Comingsoon";
+
 function App() {
   return (
     <Router>
@@ -25,6 +27,7 @@ function App() {
             <Route path="/Mens" element={<Mens />} />
             <Route path="/Womens" element={<Womens />} />
             <Route path="/Product/:_id" element={<Product />} />
+            <Route path="/comingsoon" element={<ComingSoon />} />
           </Routes>
         </div>
         <div className="my-footer">

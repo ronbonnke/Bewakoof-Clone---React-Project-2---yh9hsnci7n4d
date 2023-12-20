@@ -10,7 +10,7 @@ const Womens = () => {
     const fetchMensClothes = async () => {
       try {
         const response = await fetch(
-          'https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?gender=Women',
+          'https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?gender=Women&limit=45',
           {
             method: 'GET',
             headers: {
