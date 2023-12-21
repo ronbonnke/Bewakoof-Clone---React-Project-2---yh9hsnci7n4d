@@ -1,5 +1,7 @@
 import React from 'react'
 import '../styles/producttype/ProductType.css'
+import { Link, useNavigate } from 'react-router-dom';
+
   
 const categoryImages = [
     "https://shop.bewakoof.com/cdn/shop/files/Navigation_210x210_OOF-Sale.jpg?v=1701966304",
@@ -26,17 +28,27 @@ const categoryImages = [
   ];
   
   function ProductType() {
+    const navigate = useNavigate();
+  
+    const handleCategoryClick = (categoryTitle) => {
+      // Use navigate to navigate to the corresponding category route
+      navigate(`/${categoryTitle.toLowerCase()}`);
+    };
+
     return (
-      <div className="product-container">
-        {categoryImages.map((image, index) => (
-          <div className="product-item" key={index}>
-            <div className="product-title">{categoryTitles[index]}</div>
-            <div className="product-container-image">
-              <img src={image} alt={categoryTitles[index]} />
-            </div>
+       <div className="product-container">
+      {categoryImages.map((image, index) => (
+        <div className="product-item" key={index}>
+          {/* Use onClick to handle the category click */}
+          <div className="product-title" onClick={() => handleCategoryClick(categoryTitles[index])}>
+            {categoryTitles[index]}
           </div>
-        ))}
-      </div>
+          <div className="product-container-image">
+            <img src={image} alt={categoryTitles[index]} />
+          </div>
+        </div>
+      ))}
+    </div>
     );
   }
 

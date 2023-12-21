@@ -25,10 +25,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/password" element={<UpdatePassword />} />
-            <Route path="/Mens" element={<Mens />} />
-            <Route path="/Womens" element={<Womens />} />
+            <Route path="/men" element={<Mens />} />
+            <Route path="/women" element={<Womens />} />
             <Route path="/Product/:_id" element={<Product />} />
             <Route path="/comingsoon" element={<ComingSoon />} />
+            <Route path="/winterwear" element={<ComingSoon />} />
             <Route path="/wishlist" element={<WishList />} />
           </Routes>
         </div>
