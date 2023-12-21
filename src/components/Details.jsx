@@ -103,6 +103,41 @@ const Details = ({ item, loading, error }) => {
   // const handleRatingChange = (event) => {
   //   setSelectedRating(parseInt(event.target.value, 10));
   // };
+  const handleWishlistClick = () => {
+    // Move the useEffect outside the function
+    const addTowishlist = async () => {
+      try {
+        const response = await fetch(
+          `https://academics.newtonschool.co/api/v1/ecommerce/wishlist/${item._id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
+              projectID: 'ntymfpzixzjc',
+            },
+            body: JSON.stringify({
+              productId: item._id,
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch wishlist');
+        }
+
+        const data = await response.json();
+        // Update state based on your requirement
+        setAdded2(true);
+      } catch (error) {
+        console.error('Error fetching wishlist', error.message);
+        // setLoading(false);
+      }
+    };
+
+    addTowishlist();
+  }
+  
 
   const handleReviewTextChange = (event) => {
     setReviewText(event.target.value);
@@ -245,10 +280,10 @@ const Details = ({ item, loading, error }) => {
                 />
               </button>
             )}
-            {/* <button className="Wishlist" onClick={handleWishlistClick}>
+            <button className="Wishlist" onClick={handleWishlistClick}>
               {added2 ? <BsHeartFill /> : <BsHeart />}
               WISHLIST
-            </button> */}
+            </button>
           </div>
 
           <div className="Flex1">

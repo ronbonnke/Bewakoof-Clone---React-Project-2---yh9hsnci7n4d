@@ -12,6 +12,7 @@ import Womens from "./pages/Womens";
 // import Details from "./components/Details";
 import Product from "./pages/Product";
 import ComingSoon from "./pages/Comingsoon";
+import WishList from "./pages/WishList";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/Womens" element={<Womens />} />
             <Route path="/Product/:_id" element={<Product />} />
             <Route path="/comingsoon" element={<ComingSoon />} />
+            <Route path="/wishlist" element={<WishList />} />
           </Routes>
         </div>
         <div className="my-footer">

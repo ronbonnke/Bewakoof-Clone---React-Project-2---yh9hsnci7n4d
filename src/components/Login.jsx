@@ -154,10 +154,9 @@ const Login = () => {
   const [error, setError] = useState("");
   const [color, setColor] = useState("");
   const [login, setLogin] = useState("");
+  const { setLoginStatus, loginStatus } = useCurrentContext();
 
-  const {setLoginStatus,loginStatus} = useCurrentContext();
-
-  console.log("loginStatus",loginStatus)
+  console.log("loginStatus", loginStatus);
 
   const handlePassword = (event) => {
     setPassword(event.target.value);
@@ -167,7 +166,7 @@ const Login = () => {
     setEmail(event.target.value);
   };
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
 
     if (!email || !password) {
@@ -178,37 +177,35 @@ const Login = () => {
       setColor("red");
     } else {
       try {
-        (async function () {
-          const response = await axios.post("/user/login", {
-            email: email,
-            password: password,
-            appType: "ott",
-          });
+        const response = await axios.post("/user/login", {
+          email: email,
+          password: password,
+          appType: "ott",
+        });
 
-          const data = response.data;
+        const data = response.data;
 
-          console.log(response);
+        console.log(response);
 
-          console.log("data", data);
+        console.log("data", data);
 
-          if (data.status === "success") {
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user", JSON.stringify(data.data));
-            console.log("registration successfully");
-            setError("Login successfully");
-            setColor("green");
-            setLogin(true);
-            navigate("/");
-            setLoginStatus(true);
-          } else {
-            console.error("Registration Failed");
-            setError("Incorrect Email or password");
-            setColor("red");
-          }
-        })();
+        if (data.status === "success") {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user", JSON.stringify(data.data));
+          console.log("Login successfully");
+          setError("");
+          setColor("green");
+          setLogin(true);
+          navigate("/");
+          setLoginStatus(true);
+        } else {
+          console.error("Login Failed");
+          setError("Incorrect Email or password");
+          setColor("red");
+        }
       } catch (error) {
-        console.error("An error occurred: ", error);
-        setError("An error occurred while registering");
+        console.error("An error occurred: ", error.message);
+        setError("An error occurred while logging in");
         setColor("red");
       }
     }
@@ -217,7 +214,7 @@ const Login = () => {
   return (
     <div className="container">
       <form>
-        <div className="logo-logo">
+        <div className="logo-logo"> 
           <img
             src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg"
             alt=""

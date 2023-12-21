@@ -39,13 +39,14 @@ const Navbar = () => {
       </div>
 
       {/* Wishlist Icon */}
+      <Link to={"/wishlist"}>
       <div className="wishlist-icon">
         <img
           src="https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-wishlist-desktop.svg?v=138385657585356751091690205653"
           alt="Wishlist"
         />
         <span className="wishlist-text">Wishlist</span>
-      </div>
+      </div></Link>
 
       {/* Cart Icon */}
       <div className="cart-icon">
