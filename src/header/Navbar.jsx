@@ -27,7 +27,7 @@ const Navbar = () => {
       {/* Navigation Links */}
       <a href="/Mens">Mens</a>
       <a href="/Womens">Womens</a>
-      <a href="/">MobileCovers</a>
+      <a href="/comingsoon">MobileCovers</a>
 
       {/* Search Bar */}
       <div className="search-bar">
