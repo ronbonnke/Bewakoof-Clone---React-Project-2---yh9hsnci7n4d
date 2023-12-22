@@ -5,11 +5,12 @@ import ProductType from '../components/ProductType';
 import Banner from '../components/Banner';
 import TrendingCategories from '../components/TrendingCategories';
 import BewakoofOriginals from '../components/BewakoofOriginals';
-// import { useCurrentContext } from '../context/CurrentProvider';
+import { useCurrentContext } from '../context/CurrentProvider';
 
 const Homepage = () => {
   const [clothes, setClothes] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
+  const {setForInput} = useCurrentContext();
   // const {Number, setNum} = useCurrentContext();
   // console.log("num",Number);
   // setNum(false);
@@ -29,6 +30,7 @@ const Homepage = () => {
 
         const data = await response.json();
         setClothes(data);
+        setForInput(data.data);
       } catch (error) {
         console.error('Error fetching best sellers:', error.message);
       }

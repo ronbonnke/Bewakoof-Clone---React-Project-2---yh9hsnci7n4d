@@ -1,18 +1,42 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../styles/navbar/Navbar.css';
 import { Link, useNavigate} from 'react-router-dom';
 import { useCurrentContext } from '../context/CurrentProvider';
 
-
+import SearchBar from '../components/SearchBar';
 
 const Navbar = () => {
   const navigate = useNavigate(); 
   const {loginStatus, setLoginStatus} = useCurrentContext();
+  const {forInput} = useCurrentContext();
+  const [value, setValue] = useState();
+  const [suggestions,setSuggestions] = useState([]);
   const handleLogout = () => {
     localStorage.clear();
     setLoginStatus(false);
     navigate('/login');
   }
+  const handleInput = (e) =>{
+    setValue(e.target.value);
+   console.log("value",  value)
+   console.log("forinput", forInput)
+   const filteredSuggestions = forInput.filter((item) => {
+    const lowerCasedInput = value.toLowerCase();
+
+    return (
+      item.name.toLowerCase().includes(lowerCasedInput) ||
+      (item.color && item.color.toLowerCase().includes(lowerCasedInput)) ||
+      (item.sellerTag &&
+        item.sellerTag.toLowerCase().includes(lowerCasedInput)) ||
+      (item.subCategory &&
+        item.subCategory.toLowerCase().includes(lowerCasedInput))
+    );
+  });
+  setSuggestions(filteredSuggestions);
+
+  }
+console.log("suggestions",suggestions)
+
 
   return (
     <nav className="navbar">
@@ -30,13 +54,35 @@ const Navbar = () => {
       <a href="/comingsoon">MobileCovers</a>
 
       {/* Search Bar */}
+      
+      {/* <SearchBar /> */}
+
       <div className="search-bar">
         <input
           type="text"
           className="search-input"
           placeholder="Search by products"
+          onChange={handleInput}
         />
       </div>
+      {suggestions.length > 0 && (
+                      <ul
+                        className="suggestionsList"
+                        id="suggestionsList"
+                      >
+                        {suggestions.map((item, index) => (
+                          <li
+                            key={index}
+                            onClick={() =>
+                              handleSelectSuggestion(item.name, item._id)
+                            }
+                          >
+                            <p>{item.name}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
 
       {/* Wishlist Icon */}
       <Link to={"/wishlist"}>

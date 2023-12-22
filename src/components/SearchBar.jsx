@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const history = useHistory();
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
   const handleSearch = async () => {
     try {
@@ -12,18 +13,24 @@ const SearchBar = () => {
         `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search={"field":"name","value":"${searchTerm}"}`,
         {
           headers: {
-            projectID: 'ntymfpzixzjc',
+            projectId: 'ntymfpzixzjc',
           },
         }
       );
 
       if (response.status === 200) {
-        // Assuming the search results are available in response.data.data
-        const searchResults = response.data.data;
+        const searchData = response.data.data;
+
+        // Assuming the search results are available in response.data.data.items
+        // Check the actual structure of the response and adjust accordingly
+        const searchResults = searchData.items || [];
+
+        // Update the state with the search results
+        setSearchResults(searchResults);
 
         // You can handle the search results, for example, navigate to a search results page
         // and pass the results as a query parameter
-        history.push('/search-results', { searchResults });
+        navigate('/search-results', { state: { searchResults } });
       }
     } catch (error) {
       console.error('Error searching for products:', error);
@@ -39,9 +46,17 @@ const SearchBar = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button onClick={handleSearch}>Search</button>
+
+      {/* Render the suggestion list */}
+      {searchResults.length > 0 && (
+        <ul>
+          {searchResults.map((result) => (
+            <li key={result._id}>{result.name}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
 export default SearchBar;
-  

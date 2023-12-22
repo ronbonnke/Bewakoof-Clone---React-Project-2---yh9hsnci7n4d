@@ -10,6 +10,7 @@ function CurrentProvider({children}) {
     const [loginStatus, setLoginStatus] = useState(false);
     // const [logout, setLogout] = useState([]);
     const [Number, setNum] = useState(true);
+    const [forInput, setForInput] = useState([]);
    
 
   return (
@@ -19,6 +20,8 @@ function CurrentProvider({children}) {
         setLoginStatus,
         Number,
         setNum,
+        forInput,
+        setForInput,
       }}>
         {children}
     </CurrentContext.Provider>

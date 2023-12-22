@@ -13,6 +13,7 @@ import Womens from "./pages/Womens";
 import Product from "./pages/Product";
 import ComingSoon from "./pages/Comingsoon";
 import WishList from "./pages/WishList";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/comingsoon" element={<ComingSoon />} />
             <Route path="/winterwear" element={<ComingSoon />} />
             <Route path="/wishlist" element={<WishList />} />
+            <Route path="/searchbar" element={<SearchBar />} />
           </Routes>
         </div>
         <div className="my-footer">
