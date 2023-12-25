@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import '../styles/navbar/Navbar.css';
 import { Link, useNavigate} from 'react-router-dom';
 import { useCurrentContext } from '../context/CurrentProvider';
+// import { Link } from 'react-router-dom';
 
 import SearchBar from '../components/SearchBar';
 import Suggestions from '../components/Suggestions';
@@ -41,17 +42,17 @@ console.log("suggestions",suggestions)
   return (
     <nav className="navbar">
       {/* Logo */}
-      <a href="/">
+      <Link to="/">
         <img
           src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg"
           alt="Logo"
         />
-      </a>
+      </Link>
 
       {/* Navigation Links */}
-      <a href="/men">Mens</a>
-      <a href="/women">Womens</a>
-      <a href="/comingsoon">MobileCovers</a>
+      <Link to="/men">Mens</Link>
+      <Link to="/women">Womens</Link>
+      <Link to="/comingsoon">MobileCovers</Link>
 
       {/* Search Bar */}
       

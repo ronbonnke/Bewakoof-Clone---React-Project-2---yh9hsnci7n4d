@@ -7,6 +7,7 @@ import '../styles/details/Details.css'
 
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
+import { useCurrentContext } from "../context/CurrentProvider";
 // import { AddtoCartApi, deleteCartApi } from "../../Store/Card/Card.action";
 // import {
 //   getProductReviewsApi,
@@ -22,7 +23,11 @@ import StarIcon from "@mui/icons-material/Star";
 
 const Sizes = ["S", "M", "L", "XL", "XXL", "3XL"];
 
-const Details = ({ item, loading, error, review }) => {
+const Details = ({ item, loading, error, review, fetchProductDetails }) => {
+  const {loginStatus} = useCurrentContext();
+  console.log("loginStatus",loginStatus)
+  const {dummyreviews, setdummyReviews} = useCurrentContext();
+  
 
     console.log(item)
   const [number, setNumber] = useState(0);
@@ -128,6 +133,7 @@ const Details = ({ item, loading, error, review }) => {
 
         const data = await response.json();
         // Update state based on your requirement
+        
         setAdded2(true);
       } catch (error) {
         console.error('Error fetching wishlist', error.message);
@@ -145,7 +151,43 @@ const Details = ({ item, loading, error, review }) => {
 
   const handlePostReview = () => {
     // Dispatch an action to add the review
-    dispatch(addReviewApi(item._id, selectedStars, reviewText));
+    // dispatch(addReviewApi(item._id, selectedStars, reviewText));
+
+    const addReview = async () => {
+      try {
+        const response = await fetch(
+          `https://academics.newtonschool.co/api/v1/ecommerce/review/${item._id}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
+              projectID: 'ntymfpzixzjc',
+            },
+            body: JSON.stringify({
+              productId: item._id,
+              "ratings":selectedStars,
+              "text":reviewText,
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch wishlist');
+        }
+
+        const data = await response.json();
+        // Update state based on your requirement
+        fetchProductDetails(item._id);
+        setdummyReviews(data)
+
+        setAdded2(true);
+      } catch (error) {
+        console.error('Error fetching wishlist', error.message);
+        // setLoading(false);
+      }
+    };
+    addReview();
 
     // Clear the input fields after posting the review
     setSelectedStars(0);
@@ -310,10 +352,10 @@ const Details = ({ item, loading, error, review }) => {
             </div>
 
 
-            {/* {isAuthenticated ? (
-              <div className={styles.postreview}>
+            {loginStatus ? (
+              <div className="postreview">
                 <h2>Your Review</h2>
-                <div className={styles.StarRating}>
+                <div className="StarRating">
                   {[1, 2, 3, 4, 5].map((starValue) => (
                     <label key={starValue}>
                       {selectedStars >= starValue ? (
@@ -335,15 +377,18 @@ const Details = ({ item, loading, error, review }) => {
                   onChange={handleReviewTextChange}
                   placeholder="Write your review..."
                 ></textarea>
-                <button onClick={handlePostReview}>Post Review</button>
+                <button
+                 onClick={handlePostReview}
+                >
+                  Post Review</button>
               </div>
             ) : (
               <p>
                 Please{" "}
-                <span onClick={() => navigate.push("/login")}>login</span> to
+                <span onClick={() => navigate("/login")}>login</span> to
                 post a review.
               </p>
-            )} */}
+            )}
             {/* <Accordions label={"SAVE EXTRA WITH 3 OFFERS"} />
             <Accordions label={"PRODUCT DESCRIPTION"} />
             <Accordions label={"15 DAY RETURNS & EXCHANGE"} /> */}

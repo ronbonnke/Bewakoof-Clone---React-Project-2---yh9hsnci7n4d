@@ -1,13 +1,16 @@
 import React, { useState , useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import Details from '../components/Details';
+import { useCurrentContext } from '../context/CurrentProvider';
 
 function Product() {
 
     const [productDetail, setProductDetails] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, seterror]= useState(true);
-    const [reviews, setReviews] = useState([]);
+    const [error, setError]= useState(true);
+    // const [reviews, setReviews] = useState([]);
+    const {reviews, setReviews} = useCurrentContext();
+    const {dummyreviews, setdummyReviews} = useCurrentContext();
  
 
   const fetchProductDetails = async (_id) => {
@@ -71,7 +74,7 @@ function Product() {
         fetchReviews(_id);
 
       }
-    }, [_id]);
+    }, [_id,dummyreviews]);
   
     console.log('product', productDetail);
     console.log('reviews', reviews);
@@ -82,7 +85,7 @@ function Product() {
         <p>Loading...</p>
       ) : (
         <div>
-          <Details item={productDetail} loading={loading} review={reviews} error={error}/>  
+          <Details item={productDetail} loading={loading} review={reviews} error={error} fetchProductDetails={fetchProductDetails}/>  
         </div>
       )}
     </div>

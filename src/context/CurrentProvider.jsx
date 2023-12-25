@@ -11,6 +11,9 @@ function CurrentProvider({children}) {
     // const [logout, setLogout] = useState([]);
     const [Number, setNum] = useState(true);
     const [forInput, setForInput] = useState([]);
+    const [reviews, setReviews] = useState([]);
+    const [dummyreviews, setdummyReviews] = useState([]);
+
    
 
   return (
@@ -22,6 +25,10 @@ function CurrentProvider({children}) {
         setNum,
         forInput,
         setForInput,
+        reviews,
+        setReviews,
+        dummyreviews,
+        setdummyReviews,
       }}>
         {children}
     </CurrentContext.Provider>
