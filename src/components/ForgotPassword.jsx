@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "../API/axios";
 import "../styles/forgotpassword/ForgotPassword.css";
 import { useNavigate } from "react-router-dom";
+import { searchApi } from "../API/Services";
 
 const UpdatePassword = () => {
   const navigate = useNavigate();
@@ -14,24 +15,25 @@ const UpdatePassword = () => {
     try {
       const authToken = localStorage.getItem("token");
 
-      const response = await axios.patch(
-        "https://academics.newtonschool.co/api/v1/user/updateMyPassword",
-        {
-          name: "test6969",
-          email: "test6969@gmail.com",
-          passwordCurrent: currentPassword,
-          password: newPassword,
-          appType: "ott",
-        },
-        {
-          headers: {
-            projectID: "f104bi07c490",
-            Authorization: `Bearer ${authToken}`,
-          },
-        }
-      );
+      // const response = await axios.patch(
+      //   "/user/updateMyPassword",
+      //   {
+      //     name: "test6969",
+      //     email: "test6969@gmail.com",
+      //     passwordCurrent: currentPassword,
+      //     password: newPassword,
+      //     appType: "ott",
+      //   },
+      //   // {
+      //   //   headers: {
+      //   //     projectID: "f104bi07c490",
+      //   //     Authorization: `Bearer ${authToken}`,
+      //   //   },
+      //   // }
+      // );
 
-      const data = response.data;
+      // const data = response.data;
+      const data = searchApi("name","test123@gmail.com",currentPassword,newPassword,"ott");
 
       if (data.status === "success") {
         // Password updated successfully

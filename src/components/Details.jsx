@@ -22,7 +22,7 @@ import StarIcon from "@mui/icons-material/Star";
 
 const Sizes = ["S", "M", "L", "XL", "XXL", "3XL"];
 
-const Details = ({ item, loading, error }) => {
+const Details = ({ item, loading, error, review }) => {
 
     console.log(item)
   const [number, setNumber] = useState(0);
@@ -287,25 +287,27 @@ const Details = ({ item, loading, error }) => {
           </div>
 
           <div className="Flex1">
-            {/* <div>
+            <div>
               <h1>Reviews</h1>
               {loading && <p>Loading reviews...</p>}
               {error && <p>Error loading reviews</p>}
-              {reviews && reviews.length > 0 ? (
+              {review && review.length > 0 ? (
                 <div>
-                  {reviews.map((review) => (
+                  {review.map((review) => (
                     <div key={review._id} className="reviwed">
                       <p>{review.text}</p>
                       
                       <div>{renderStarIcons(review.ratings)}</div>
                       <hr />
+
+                      
                     </div>
                   ))}
                 </div>
               ) : (
                 <p>No reviews available</p>
               )}
-            </div> */}
+            </div>
 
 
             {/* {isAuthenticated ? (

@@ -4,7 +4,7 @@ import { Link, useNavigate} from 'react-router-dom';
 import { useCurrentContext } from '../context/CurrentProvider';
 
 import SearchBar from '../components/SearchBar';
-
+import Suggestions from '../components/Suggestions';
 const Navbar = () => {
   const navigate = useNavigate(); 
   const {loginStatus, setLoginStatus} = useCurrentContext();
@@ -21,7 +21,7 @@ const Navbar = () => {
    console.log("value",  value)
    console.log("forinput", forInput)
    const filteredSuggestions = forInput.filter((item) => {
-    const lowerCasedInput = value.toLowerCase();
+    const lowerCasedInput = value?.toLowerCase();
 
     return (
       item.name.toLowerCase().includes(lowerCasedInput) ||
@@ -65,25 +65,8 @@ console.log("suggestions",suggestions)
           onChange={handleInput}
         />
       </div>
-      {suggestions.length > 0 && (
-                      <ul
-                        className="suggestionsList"
-                        id="suggestionsList"
-                      >
-                        {suggestions.map((item, index) => (
-                          <li
-                            key={index}
-                            onClick={() =>
-                              handleSelectSuggestion(item.name, item._id)
-                            }
-                          >
-                            <p>{item.name}</p>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-
+      {suggestions ?  <Suggestions suggestions={suggestions} setSuggestions={setSuggestions}/> : " "}
+     {/* <Suggestions suggestions={suggestions}/> */}
       {/* Wishlist Icon */}
       <Link to={"/wishlist"}>
       <div className="wishlist-icon">

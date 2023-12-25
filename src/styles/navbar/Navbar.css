@@ -117,7 +117,31 @@ body {
     display: none; /* Hide wishlist text, India flag, and cart count */
   }
 }
-/* Navbar.css */
+
+.search-box {
+  /* position: absolute,
+  backgroundColor: "grey",
+  top: "20%",
+  left: "60%",
+  width: "380px",
+  // height: "100vh",
+  zIndex: 1000,
+  boxShadow: "rgba(41, 45, 53, 0.15) 0px 0px 12px", */
+  /* position: absolute; */
+  background-color: grey;
+  left: 60%;
+  color: black;
+  width: 380px;
+  max-height: 400px;
+  min-height: 0px;
+  z-index: 1000;
+  box-shadow: rgba(41, 45, 53, 0.15);
+  overflow-y: scroll;
+  position: absolute;
+  /* margin-top: 30.5%; */
+  top: 10%;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
