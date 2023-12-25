@@ -272,12 +272,13 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
                 <div key={index}>
                   <button
                     style={{
+                      border:"none",
                       backgroundColor:
                         selected && buttonindex === index ? color : "none",
                     }}
                     onClick={() => {
                       setSelect(true);
-                      setColor("blue");
+                      setColor("white");
                       setButtonIndex(index);
                     }}
                   >
