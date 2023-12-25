@@ -42,14 +42,10 @@ const Womens = () => {
         <p>Loading...</p>
       ) : (
         <div>
-      {/* <Banner
-        src={
-          "https://images.bewakoof.com/uploads/category/desktop/INSIDE-BANNER_DESKTOP_FREEBIE-1667395627.jpg"
-        }
-      /> */}
+      
 
       <div className="Box">
-        {/* <div className="Drops"><Dropdown /></div> */}
+
         <div className="containers">
           {womensCloths.map((item) => (
             <Card item={item} key={item._id} />

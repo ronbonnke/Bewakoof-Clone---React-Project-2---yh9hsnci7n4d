@@ -59,10 +59,5 @@ function WishList() {
   </div>
   )
 }
- //  wishlistItem.products.map((item) =>{
-        //     console.log("products",item)
-        //    return (
-        //     <div>hi</div>
-        //     )
-        //  })
+
 export default WishList

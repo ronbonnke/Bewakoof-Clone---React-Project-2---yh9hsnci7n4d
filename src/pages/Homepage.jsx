@@ -12,9 +12,7 @@ const Homepage = () => {
   const [clothes, setClothes] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const {setForInput} = useCurrentContext();
-  // const {Number, setNum} = useCurrentContext();
-  // console.log("num",Number);
-  // setNum(false);
+
   useEffect(() => {
     const fetchBestSellers = async () => {
       try {
