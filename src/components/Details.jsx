@@ -269,10 +269,12 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
             </div>
             <div className="Sizes">
               {Sizes.map((size, index) => (
-                <div key={index}>
-                  <button
+                <div 
+                key={index}>
+                  <button 
                     style={{
                       border:"none",
+                      cursor: "pointer",
                       backgroundColor:
                         selected && buttonindex === index ? color : "none",
                     }}
