@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { fetchProducts } from "../../Store/Product/product.actions";
-// import { fetchProducts } from "../../Store/Products/product.actions";
-import "./dropdown.css";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProducts } from "../../Store/Products/product.actions";
+import { useCurrentContext } from "your-context-path"; // Replace with the correct path
+import "../styles/dropdown/Dropdown.css"
 
 const Colors = [
   { name: "CREAM" },
@@ -22,7 +22,7 @@ const Dropdown = ({ Sort }) => {
   const [open4, isOpen4] = useState(false);
   const [open5, isOpen5] = useState(false);
   const dispatch = useDispatch();
-//   const { data, loading, error } = useSelector((state) => state.product);
+  const { data, loading, error } = useSelector((state) => state.product);
 
   const handleDrop = (value) => {
     if (value === 0) {
@@ -40,55 +40,58 @@ const Dropdown = ({ Sort }) => {
     }
   };
 
-//   const handleFilterAfterApiCall = () => {
-//     dispatch(
-//       fetchProducts(
-//         "https://academics.newtonschool.co/api/v1/ecommerce/clothes/products"
-//       )
-//     )
-//       .then(() => {
-//         // const { data } = products;
+  const handleFilterAfterApiCall = async () => {
+    try {
+      await dispatch(
+        fetchProducts(
+          "https://academics.newtonschool.co/api/v1/ecommerce/clothes/products"
+        )
+      );
 
-//         // Filter products with prices more than 300 and less than 2000
-//         const filteredProducts = data.filter(
-//           (product) => product.price > 500 && product.price < 600
-//         );
+      // Filter products with prices more than 300 and less than 2000
+      const filteredProducts = data.filter(
+        (product) => product.price > 500 && product.price < 600
+      );
 
-//         // Perform additional logic with the filtered products
-//         console.log("Filtered Products:", filteredProducts);
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching and filtering products:", error);
-//       });
-//   };
+      // Perform additional logic with the filtered products
+      console.log("Filtered Products:", filteredProducts);
+    } catch (error) {
+      console.error("Error fetching and filtering products:", error);
+    }
+  };
 
-const [clothes, setClothes] = useState([]);
-//   const [startIndex, setStartIndex] = useState(0);
-  // const {Number, setNum} = useCurrentContext();
-  // console.log("num",Number);
-  // setNum(false);
+  const [clothes, setClothes] = useState([]);
+  const [startIndex, setStartIndex] = useState(0);
+  const { Number, setNum } = useCurrentContext();
+  console.log("num", Number);
+  setNum(false);
+
   useEffect(() => {
     const fetchBestSellers = async () => {
       try {
-        const response = await fetch('https://academics.newtonschool.co/api/v1/ecommerce/clothes/products', {
-          method: 'GET',
-          headers: {
-            'projectId': 'ntymfpzixzjc',
-          },
-        });
+        const response = await fetch(
+          "https://academics.newtonschool.co/api/v1/ecommerce/clothes/products",
+          {
+            method: "GET",
+            headers: {
+              projectId: "ntymfpzixzjc",
+            },
+          }
+        );
 
         if (!response.ok) {
-          throw new Error('Failed to fetch best sellers');
+          throw new Error("Failed to fetch best sellers");
         }
 
         const data = await response.json();
         setClothes(data);
       } catch (error) {
-        console.error('Error fetching best sellers:', error.message);
+        console.error("Error fetching best sellers:", error.message);
       }
     };
 
     fetchBestSellers();
+  }, []);
 
     
 
