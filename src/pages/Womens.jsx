@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/mens/Mens.css'
 import Card from '../components/Card';
+import Dropdown from '../components/Dropdown';
+
+// import { Dropdown } from 'semantic-ui-react';
+
 
 const Womens = () => {
   const [womensCloths, setWomensCloths] = useState([]);
@@ -45,7 +49,7 @@ const Womens = () => {
       
 
       <div className="Box">
-
+      <div className="Drops"><Dropdown /></div>
         <div className="containers">
           {womensCloths.map((item) => (
             <Card item={item} key={item._id} />

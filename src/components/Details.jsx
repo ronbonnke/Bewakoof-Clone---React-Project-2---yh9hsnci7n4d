@@ -28,6 +28,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
   console.log("loginStatus",loginStatus)
   const {dummyreviews, setdummyReviews} = useCurrentContext();
   
+  
 
     console.log(item)
   const [number, setNumber] = useState(0);
@@ -178,7 +179,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
 
         const data = await response.json();
         // Update state based on your requirement
-        fetchProductDetails(item._id);
+        // fetchProductDetails(item._id);
         setdummyReviews(data)
 
         setAdded2(true);

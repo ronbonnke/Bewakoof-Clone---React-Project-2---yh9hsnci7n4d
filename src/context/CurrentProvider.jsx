@@ -13,6 +13,7 @@ function CurrentProvider({children}) {
     const [forInput, setForInput] = useState([]);
     const [reviews, setReviews] = useState([]);
     const [dummyreviews, setdummyReviews] = useState([]);
+    const [mensClothes, setMensClothes] = useState([]);
 
    
 
@@ -29,6 +30,8 @@ function CurrentProvider({children}) {
         setReviews,
         dummyreviews,
         setdummyReviews,
+        mensClothes,
+        setMensClothes
       }}>
         {children}
     </CurrentContext.Provider>

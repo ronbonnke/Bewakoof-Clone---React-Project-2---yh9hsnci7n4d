@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/mens/Mens.css'
 import Card from '../components/Card';
-import { Dropdown } from 'semantic-ui-react';
-
+// import { Dropdown } from 'semantic-ui-react';
+// import Dropdown from '../components/Dropdown';
+import Dropdown from '../components/Dropdown';
+import { useCurrentContext } from '../context/CurrentProvider';
 
 const Mens = () => {
-  const [mensClothes, setMensClothes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const {mensClothes,setMensClothes} = useCurrentContext();
 
   useEffect(() => {
     const fetchMensClothes = async () => {
@@ -49,6 +51,7 @@ const Mens = () => {
 
       <div className="Box">
         <div className="Drops"><Dropdown /></div>
+        
         <div className="containers">
           {mensClothes.map((item) => (
             <Card item={item} key={item._id} />
