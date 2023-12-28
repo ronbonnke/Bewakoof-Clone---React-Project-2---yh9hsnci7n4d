@@ -4,7 +4,7 @@ body {
 }
 
 .navbar {
-  background-color: orange;
+  background-color: #ffd84d;
   color: #fff;
   padding: 10px;
   display: flex;
@@ -83,7 +83,7 @@ body {
 
 @media screen and (max-width: 320px) {
   .navbar {
-    background-color: orange; /* Set background color for smaller screens */
+    background-color: #ffd84d; /* Set background color for smaller screens */
     flex-wrap: wrap;
     justify-content: space-around;
   }
@@ -148,7 +148,7 @@ body {
 }
 
 .navbar {
-  background-color: orange;
+  background-color: #ffd84d;
   color: #fff;
   padding: 10px;
   display: flex;
@@ -262,7 +262,7 @@ body {
 
 @media screen and (max-width: 320px) {
   .navbar {
-    background-color: orange;
+    background-color: #ffd84d;
     /* padding: 10px; */
     display: flex;
     justify-content: space-between;

@@ -222,6 +222,35 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
   const navigate = useNavigate();
 
 
+  const addToCart = async (_id, size, quantity) => {
+    try {
+      const response = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/cart/${_id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            projectID: "ntymfpzixzjc",
+          }, 
+          body: JSON.stringify({
+            quantity: quantity,
+            size: size,
+          }),
+        }
+      );
+  
+      // Rest of your code...
+  
+      // Handle response status or other logic here if needed
+    } catch (error) {
+      console.error("Error adding to cart:", error.message);
+      // Handle the error
+    }
+  };
+  
+
+
   return (
     <div>
       <div className="Container">
@@ -253,8 +282,8 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
           </div>
           <div className="Price">
             <p>₹{item.price}</p>
-            {/* <p>₹{item.actualPrice}</p>
-            <p>{item.off} OFF</p> */}
+            <p>₹{item.actualPrice}</p>
+            <p>{item.off} 29% OFF</p>
           </div>
           <p className="Taxes">Inclusive of all taxes</p>
           <div className="Tribe">
@@ -297,7 +326,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
               <button
                 onClick={() => {
                   setAdded(false);
-                //   dispatch(deleteCartApi(item._id));
+
                 }}
                 style={{ backgroundColor: "red", color: "white" }}
               >
@@ -310,15 +339,11 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
               <button
                 onClick={() => {
                   setAdded(true);
-                //   dispatch(
-                //     AddtoCartApi({
-                //       item_id: item._id,
-                //       size: Sizes[buttonindex],
-                //       quantity: 1,
-                //     })
-                //   );
+                  addToCart(_id= item._id,
+                    size= Sizes[buttonindex],
+                    quantity= 1,)
                 }}
-                // disabled={isAuthenticated ? false : true}
+                
               >
                 Add to cart
                 <BsBagCheck
@@ -393,9 +418,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
                 post a review.
               </p>
             )}
-            {/* <Accordions label={"SAVE EXTRA WITH 3 OFFERS"} />
-            <Accordions label={"PRODUCT DESCRIPTION"} />
-            <Accordions label={"15 DAY RETURNS & EXCHANGE"} /> */}
+            
           </div>
         </div>
         <div></div>

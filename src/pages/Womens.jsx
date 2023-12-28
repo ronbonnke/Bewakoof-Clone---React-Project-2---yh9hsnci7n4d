@@ -4,14 +4,14 @@ import Card from '../components/Card';
 import Dropdown from '../components/Dropdown';
 
 // import { Dropdown } from 'semantic-ui-react';
-
+import { useCurrentContext } from '../context/CurrentProvider';
 
 const Womens = () => {
-  const [womensCloths, setWomensCloths] = useState([]);
+  const {womensCloths, setWomensCloths} = useCurrentContext();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchMensClothes = async () => {
+    const fetchWomensClothes = async () => {
       try {
         const response = await fetch(
           'https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?gender=Women&limit=45',
@@ -24,19 +24,19 @@ const Womens = () => {
         );
 
         if (!response.ok) {
-          throw new Error('Failed to fetch men\'s clothes');
+          throw new Error('Failed to fetch women\'s clothes');
         }
 
         const data = await response.json();
         setWomensCloths(data.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching men\'s clothes:', error.message);
+        console.error('Error fetching women\'s clothes:', error.message);
         setLoading(false);
       }
     };
 
-    fetchMensClothes();
+    fetchWomensClothes();
   }, []);
 
   return (
