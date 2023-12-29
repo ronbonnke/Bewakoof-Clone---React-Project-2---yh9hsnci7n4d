@@ -43,9 +43,10 @@ function Cart() {
           <>
           <div className="cart-products" key={item.product._id}>
             {/* Render your card or item details here */}
+            <img src={item.product.displayImage} alt="product image" />
             <h3>{item.product.name}</h3>
+
              
-            <img src={item.product.displayImage} alt="" />
             {/* Add more details as needed */}
           </div>
           <div>
