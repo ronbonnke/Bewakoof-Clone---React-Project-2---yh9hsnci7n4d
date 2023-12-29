@@ -79,13 +79,14 @@ console.log("suggestions",suggestions)
       </div></Link>
 
       {/* Cart Icon */}
+      <Link to={"/cart"}>
       <div className="cart-icon">
         <img
           src="https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-cart-mobile.svg?v=134184629154633135331696418236"
           alt="Cart"
         />
         <div className="cart-count">0</div>
-      </div>
+      </div></Link>
 
       {/* Login */}
       <div className="login">

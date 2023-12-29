@@ -15,6 +15,7 @@ import ComingSoon from "./pages/Comingsoon";
 import WishList from "./pages/WishList";
 import SearchBar from "./components/SearchBar";
 import Profile from "./pages/Profile";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/searchbar" element={<SearchBar />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
         <div className="my-footer">

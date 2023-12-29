@@ -223,6 +223,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
 
 
   const addToCart = async (_id, size, quantity) => {
+    console.log("id",_id)
     try {
       const response = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/cart/${_id}`,
@@ -246,6 +247,24 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
     } catch (error) {
       console.error("Error adding to cart:", error.message);
       // Handle the error
+    }
+  };
+  const removeItem = async (_id) => {
+    console.log("id",_id)
+    try {
+      const response = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/cart/${_id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            projectId: 'ntymfpzixzjc',
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Error removing to cart:", error.message);
     }
   };
   
@@ -325,7 +344,11 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
             {added ? (
               <button
                 onClick={() => {
+
                   setAdded(false);
+                  removeItem(
+                    item._id,
+                  )
 
                 }}
                 style={{ backgroundColor: "red", color: "white" }}
@@ -334,22 +357,22 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
                   style={{ fontWeight: "Bolder", fontSize: "18px" }}
                 />
                 Remove Item
+                
               </button>
             ) : (
               <button
-                onClick={() => {
-                  setAdded(true);
-                  addToCart(_id= item._id,
-                    size= Sizes[buttonindex],
-                    quantity= 1,)
-                }}
-                
-              >
-                Add to cart
-                <BsBagCheck
-                  style={{ fontWeight: "Bolder", fontSize: "18px" }}
-                />
-              </button>
+              onClick={() => {
+                setAdded(true);
+                addToCart(
+                  item._id,
+                  Sizes[buttonindex],
+                  1
+                );
+              }}
+            >
+              Add to cart
+              <BsBagCheck style={{ fontWeight: "Bolder", fontSize: "18px" }} />
+            </button>
             )}
             <button className="Wishlist" onClick={handleWishlistClick}>
               {added2 ? <BsHeartFill /> : <BsHeart />}

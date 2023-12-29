@@ -1,0 +1,12 @@
+section div img {
+  height: 150px;
+  width: 130px;
+}
+
+.Cart-item section span {
+  justify-content: center;
+}
+
+.cart-products {
+  border: 5px solid green;
+}
