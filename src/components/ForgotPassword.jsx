@@ -31,14 +31,18 @@ const UpdatePassword = () => {
       //   //   },
       //   // }
       // );
-
       // const data = response.data;
-      const data = searchApi("name","test123@gmail.com",currentPassword,newPassword,"ott");
+      const data = searchApi(
+        "name",
+        "test123@gmail.com",
+        currentPassword,
+        newPassword,
+        "ott"
+      );
 
       if (data.status === "success") {
-        // Password updated successfully
         console.log("Password updated successfully");
-        navigate("/"); // Navigate to the home page
+        navigate("/");
       } else {
         setError(
           data.message || "An error occurred while updating the password"

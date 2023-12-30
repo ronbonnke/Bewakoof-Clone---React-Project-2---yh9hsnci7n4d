@@ -40,7 +40,7 @@ function AllCards() {
         <span>({cart.length} item{cart.length !== 1 ? 's' : ''})</span>
       </div>
       {cart.length === 0 ? (
-        <div>No cart items</div>
+        <div>No cart items are added</div>
       ) : (
         cart.map((item) => (
           <>

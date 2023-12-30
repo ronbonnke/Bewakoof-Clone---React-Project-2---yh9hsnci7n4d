@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BsHeart, BsBagCheck, BsHeartFill } from "react-icons/bs";
-// import Accordions from "./Accordion";
-import { FaStar } from "react-icons/fa";
+// import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import '../styles/details/Details.css'
 
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 import { useCurrentContext } from "../context/CurrentProvider";
-// import { AddtoCartApi, deleteCartApi } from "../../Store/Card/Card.action";
-// import {
-//   getProductReviewsApi,
-//   addReviewApi,
-// } from "../../Store/review/review.actions";
-
-
-// import {
-//   addToWishlistApi,
-//   removeFromWishlistApi,
-// } from "../../Store/wishlist/wishlist.action";
-// import { useDispatch, useSelector } from "react-redux";
 
 const Sizes = ["S", "M", "L", "XL", "XXL", "3XL"];
 
@@ -27,90 +14,21 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
   const {loginStatus} = useCurrentContext();
   console.log("loginStatus",loginStatus)
   const {dummyreviews, setdummyReviews} = useCurrentContext();
-  
-  
-
     console.log(item)
   const [number, setNumber] = useState(0);
-//   const { cart2 } = useSelector((state) => state.Cart);
-//   const { reviews, loading, error } = useSelector((state) => state.review);
-  // console.log("reviews", reviews);
   const [selectedRating, setSelectedRating] = useState(0);
   const [reviewText, setReviewText] = useState("");
   const [selectedStars, setSelectedStars] = useState(0);
   console.log("stars", selectedStars);
 
-//   useEffect(() => {
-//     // Fetch reviews when the component mounts
-//     if (item && item._id) {
-//       dispatch(getProductReviewsApi(item._id));
-//     }
-//   }, [dispatch, item]);
-
   const [added, setAdded] = useState(false);
   const [added2, setAdded2] = useState(false);
-//   const { isAuthenticated } = useSelector((state) => state.auth.data);
+
   const [color, setColor] = useState();
   const [selected, setSelect] = useState(false);
   const [buttonindex, setButtonIndex] = useState();
-//   const dispatch = useDispatch();
-//   const { wishlist } = useSelector((state) => state.wishlist);
-
-//   useEffect(() => {
-//     console.log("Current cart2 state:", cart2);
-//     let isMounted = true;
-
-//     if (item && item._id && isMounted && cart2) {
-//       let check = cart2.some((d) => d && d._id === item._id);
-//       setAdded(check);
-//     }
-
-//     return () => {
-//       isMounted = false;
-//     };
-//   }, [item, cart2]);
   
-  // Include dependencies in the dependency array
-
-  // console.log("details", item.images);
-  // console.log("details id", item._id);
-
-
-//   useEffect(() => {
-//     // Check if the item is in the wishlist
-//     let isMounted = true;
-//     if (item && item._id && isMounted && wishlist) {
-//       let check = wishlist.some((d) => d && d._id === item._id);
-//       setAdded(check);
-//     }
-
-//     return () => {
-//       isMounted = false;
-//     };
-//   }, [item, wishlist]);
-
-
-//   const handleWishlistClick = () => {
-//     if (added2) {
-//       // If the item is already in the wishlist, remove it
-//       setAdded2(false);
-//       // Dispatch an action to remove the item from the wishlist
-//       // (Implement this action in your wishlist actions file)
-//       dispatch(removeFromWishlistApi(item._id));
-//     } else {
-//       // If the item is not in the wishlist, add it
-//       setAdded2(true);
-//       // Dispatch an action to add the item to the wishlist
-//       // (Implement this action in your wishlist actions file)
-//       dispatch(addToWishlistApi(item._id));
-//     }
-//   };
-
-  // const handleRatingChange = (event) => {
-  //   setSelectedRating(parseInt(event.target.value, 10));
-  // };
   const handleWishlistClick = () => {
-    // Move the useEffect outside the function
     const addTowishlist = async () => {
       try {
         const response = await fetch(
@@ -133,12 +51,10 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
         }
 
         const data = await response.json();
-        // Update state based on your requirement
         
         setAdded2(true);
       } catch (error) {
         console.error('Error fetching wishlist', error.message);
-        // setLoading(false);
       }
     };
 
@@ -151,9 +67,6 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
   };
 
   const handlePostReview = () => {
-    // Dispatch an action to add the review
-    // dispatch(addReviewApi(item._id, selectedStars, reviewText));
-
     const addReview = async () => {
       try {
         const response = await fetch(
@@ -176,31 +89,20 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
         if (!response.ok) {
           throw new Error('Failed to fetch wishlist');
         }
-
         const data = await response.json();
-        // Update state based on your requirement
-        // fetchProductDetails(item._id);
         setdummyReviews(data)
-
         setAdded2(true);
       } catch (error) {
         console.error('Error fetching wishlist', error.message);
-        // setLoading(false);
       }
     };
     addReview();
-
-    // Clear the input fields after posting the review
     setSelectedStars(0);
-    // setSelectedRating(0);
     setReviewText("");
   };
-
   const handleStarClick = (starValue) => {
-    // Toggle the selected star value
     setSelectedStars((prevStars) => (prevStars === starValue ? 0 : starValue));
   };
-
   const renderStarIcons = (rating) => {
     const filledStars = Math.floor(rating);
     const emptyStars = 5 - filledStars;

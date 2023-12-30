@@ -67,11 +67,17 @@ const Cart = () => {
       <div className="Container2">
         <div className="single2">
           {/* <Others />
+
+          < />
+          < />
+
           <Other2 /> */}
           <Allcards />
         </div>
         <div className="double3">
           {/* <Tribe />
+          <Content />
+          
           <Table /> */}
         </div>
       </div>

@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { fetchProducts } from "../../Store/Product/product.actions";
-// import { fetchProducts } from "../../Store/Products/product.actions";
-// import "./dropdown.css";
 import "../styles/dropdown/Dropdown.css";
 import { useCurrentContext } from "../context/CurrentProvider";
 
@@ -147,7 +143,6 @@ const Dropdown = ({ Sort }) => {
                 type="checkbox"
                 onChange={(e) => {
                   if (e.target.checked === true) {
-                    // handleFilterAfterApiCall();
                     let url =
                       "https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?sellerTag=trending";
                     fetchProducts(url);

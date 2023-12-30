@@ -16,7 +16,6 @@ const Login = () => {
   const { setLoginStatus, loginStatus } = useCurrentContext();
 
   console.log("loginStatus", loginStatus);
-
   const handlePassword = (event) => {
     setPassword(event.target.value);
   };

@@ -20,16 +20,9 @@ const SearchBar = () => {
 
       if (response.status === 200) {
         const searchData = response.data.data;
-
-        // Assuming the search results are available in response.data.data.items
-        // Check the actual structure of the response and adjust accordingly
         const searchResults = searchData.items || [];
 
-        // Update the state with the search results
         setSearchResults(searchResults);
-
-        // You can handle the search results, for example, navigate to a search results page
-        // and pass the results as a query parameter
         navigate('/search-results', { state: { searchResults } });
       }
     } catch (error) {

@@ -29,9 +29,7 @@ const categoryImages = [
   
   function ProductType() {
     const navigate = useNavigate();
-  
     const handleCategoryClick = (categoryTitle) => {
-      // Use navigate to navigate to the corresponding category route
       navigate(`/${categoryTitle.toLowerCase()}`);
     };
 
@@ -39,7 +37,6 @@ const categoryImages = [
        <div className="product-container">
       {categoryImages.map((image, index) => (
         <div className="product-item" key={index}>
-          {/* Use onClick to handle the category click */}
           <div className="product-title" onClick={() => handleCategoryClick(categoryTitles[index])}>
             {categoryTitles[index]}
           </div>
