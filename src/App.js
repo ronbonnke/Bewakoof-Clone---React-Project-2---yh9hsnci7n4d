@@ -16,6 +16,7 @@ import WishList from "./pages/WishList";
 import SearchBar from "./components/SearchBar";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
+import CardTable from "./components/CardTable";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="/searchbar" element={<SearchBar />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/cardtable" element={<CardTable />} />
           </Routes>
         </div>
         <div className="my-footer">

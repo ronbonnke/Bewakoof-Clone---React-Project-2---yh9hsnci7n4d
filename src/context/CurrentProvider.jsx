@@ -8,7 +8,6 @@ const CurrentContext = createContext();
 function CurrentProvider({children}) {
 
     const [loginStatus, setLoginStatus] = useState(false);
-    // const [logout, setLogout] = useState([]);
     const [Number, setNum] = useState(true);
     const [forInput, setForInput] = useState([]);
     const [reviews, setReviews] = useState([]);

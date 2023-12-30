@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
 import Allcards from "../components/AllCards";
 import "../styles/cart/Cart.css";
+import CardTable from "../components/CardTable";
 
 // import Other2 from "../components/Cart/Other2";
 // import Others from "../components/Cart/Others";
@@ -75,10 +75,11 @@ const Cart = () => {
           <Allcards />
         </div>
         <div className="double3">
-          {/* <Tribe />
-          <Content />
+          {/*  <Tribe /> */}
+          {/* <Content /> */}
           
-          <Table /> */}
+    
+          <CardTable />
         </div>
       </div>
     </div>

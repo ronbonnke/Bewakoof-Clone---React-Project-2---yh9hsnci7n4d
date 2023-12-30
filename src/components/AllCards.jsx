@@ -5,8 +5,8 @@ import Card02 from '../components/Card02';
 
 
 function AllCards() {
+  
   const [cart, setCart] = useState([]);
-
   const getCartItems = async () => {
     try {
       const response = await fetch(
