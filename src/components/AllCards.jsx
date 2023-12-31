@@ -5,7 +5,7 @@ import Card02 from '../components/Card02';
 
 
 function AllCards() {
-  
+
   const [cart, setCart] = useState([]);
   const getCartItems = async () => {
     try {
@@ -21,7 +21,7 @@ function AllCards() {
         }
       );
       const data = await response.json();
-      setCart(data.data.items); // Set the state to the items array
+      setCart(data.data.items); 
       console.log('cart', cart);
       console.log('response', data.data);
     } catch (error) {
@@ -50,7 +50,6 @@ function AllCards() {
             <h3>{item.product.name}</h3> */}
 
              <Card02 item={item}/>
-            {/* Add more details as needed */}
           </div>
           <div>
             

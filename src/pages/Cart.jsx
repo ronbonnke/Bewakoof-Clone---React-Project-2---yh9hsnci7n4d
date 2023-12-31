@@ -16,7 +16,7 @@ const Cart = () => {
 //   const { loading, error, cart } = useSelector((state) => state.Cart);
 
   useEffect(() => {
-    // dispatch(getCartApi());
+
   }, []);
 //   console.log(cart);
 //   if (loading) {

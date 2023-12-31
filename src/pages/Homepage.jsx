@@ -7,9 +7,11 @@ import TrendingCategories from '../components/TrendingCategories';
 import BewakoofOriginals from '../components/BewakoofOriginals';
 import { useCurrentContext } from '../context/CurrentProvider';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
   const [clothes, setClothes] = useState([]);
+  const navigate = useNavigate();
   const [startIndex, setStartIndex] = useState(0);
   const {setForInput} = useCurrentContext();
 
