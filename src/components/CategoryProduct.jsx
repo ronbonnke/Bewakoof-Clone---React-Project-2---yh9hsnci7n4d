@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/category/CategoryProduct.css';
 
 const categoryImages = [
@@ -19,7 +20,16 @@ const categoryTitles = [
   "Combos",
   "Vote for Design",
   "T-Shirts",
-  // Add more titles for each category
+];
+
+const categoryRoutes = [
+  "/search/new arrival",
+  "/search/trending",
+  "/search/official-merch",
+  "/search/customization",
+  "/search/combos",
+  "/search/vote-for-design",
+  "/search/t-shirts",
 ];
 
 function CategoryProduct() {
@@ -29,7 +39,9 @@ function CategoryProduct() {
         <div className="category-item" key={index}>
           <div className="category-title">{categoryTitles[index]}</div>
           <div className="category-container-image">
-            <img src={image} alt={categoryTitles[index]} />
+            <Link to={categoryRoutes[index]}>
+              <img src={image} alt={categoryTitles[index]} />
+            </Link>
           </div>
         </div>
       ))}

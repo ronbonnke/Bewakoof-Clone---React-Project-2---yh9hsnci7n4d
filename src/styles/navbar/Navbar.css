@@ -85,7 +85,7 @@ body {
   .navbar {
     background-color: #ffd84d; /* Set background color for smaller screens */
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .navbar img {
@@ -95,7 +95,7 @@ body {
 
   .navbar a {
     margin: 3px 3px;
-    font-size: 8px; /* Adjust text size */
+    font-size: 6px; /* Adjust text size */
   }
 
   .search-bar {
