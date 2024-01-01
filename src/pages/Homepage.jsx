@@ -70,7 +70,9 @@ const Homepage = () => {
         <div className="slider-item" style={{ transform: `translateX(-${startIndex * (100 / 3)}%)` }}>
           {clothes.data && clothes.data.map((item) => (
             <div key={item._id} className="slider-img">
-              <img src={item.displayImage} alt={item.name} />
+              <img src={item.displayImage} alt={item.name} onClick={() =>{
+                 navigate("/Product" + "/" + item._id)
+              }}/>
             </div>
           ))}
           
