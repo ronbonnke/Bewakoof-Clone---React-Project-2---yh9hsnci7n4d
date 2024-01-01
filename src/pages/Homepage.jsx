@@ -39,15 +39,12 @@ const Homepage = () => {
 
     fetchBestSellers();
 
-    // Auto slide every 5 seconds
     const intervalId = setInterval(() => {
       handleNext();
     }, 5000);
 
-    // Clear the interval when the component is unmounted
     return () => clearInterval(intervalId);
-  }, [startIndex]); // Add startIndex as a dependency to avoid potential issues
-
+  }, [startIndex]); 
   const handleNext = () => {
     const nextIndex = startIndex + 3;
     if (clothes.data && clothes.data.length > 0) {
