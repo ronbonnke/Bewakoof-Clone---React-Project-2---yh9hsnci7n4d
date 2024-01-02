@@ -57,9 +57,9 @@ const Footer = () => {
 
       {/* Bewakoof Info */}
       <div className="bewakoof-info">
-        <p>
+        <p1>
           <strong>BEWAKOOF®</strong>THE NEW AGE ONLINE SHOPPING EXPERIENCE.
-        </p>
+        </p1>
         <p>
           Founded in 2012, Bewakoof®is a lifestyle fashion brand that makes
           creative, distinctive fashion for the trendy, contemporary Indian.

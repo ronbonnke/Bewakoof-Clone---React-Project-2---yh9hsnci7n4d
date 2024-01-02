@@ -1,4 +1,3 @@
-/* Footer.css */
 body {
   margin: 0;
   display: flex;
@@ -22,12 +21,19 @@ body {
 .footer-section {
   margin-bottom: 20px; /* Adjust this value as needed */
 }
+.footer-section h3 {
+  color: #ffd84d;
+}
 
 .footer-line {
   width: 100%;
   height: 2px;
   background-color: white;
   margin: 20px 0;
+}
+
+.bewakoof-info p1 {
+  color: #ffd84d;
 }
 
 @media screen and (max-width: 320px) {
