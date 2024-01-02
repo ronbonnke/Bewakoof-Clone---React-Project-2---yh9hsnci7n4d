@@ -14,22 +14,22 @@ const categoryImages = [
 
 const categoryTitles = [
   "New Arrivals",
-  "Winterwear",
-  "Official Merch",
-  "Customization",
+  "Trending",
+  "Best Sellers",
+  "Top Rated",
   "Combos",
   "Vote for Design",
-  "T-Shirts",
+  "Shirts",
 ];
 
 const categoryRoutes = [
   "/search/new arrival",
   "/search/trending",
-  "/search/official-merch",
-  "/search/customization",
-  "/search/combos",
-  "/search/vote-for-design",
-  "/search/t-shirts",
+  "/search/best seller",
+  "/search/Top rated",
+  "/search/combo",
+  "/search/design",
+  "/search/shirt",
 ];
 
 function CategoryProduct() {

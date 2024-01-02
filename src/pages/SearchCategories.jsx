@@ -54,13 +54,7 @@ const SearchCategories = () => {
     );
   });
 
-
-
   return (
-   
-      
-     
-
       <div className="Box1">
           <div className="Drops1">
             <Dropdown />

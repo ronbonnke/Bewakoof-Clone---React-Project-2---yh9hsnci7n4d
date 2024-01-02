@@ -7,7 +7,7 @@ import '../styles/trendingcategory/TrendingCategories.css';
 const categoryImages = [
   {
     image: "https://shop.bewakoof.com/cdn/shop/files/unnamed_8.jpg?v=1699601717",
-    route: "/search/new arrival",
+    route: "/search/hoodie",
   },
   {
     image: "https://shop.bewakoof.com/cdn/shop/files/Trending-Categories-Tile-sweaters-1699603687.webp?v=1700036096",
