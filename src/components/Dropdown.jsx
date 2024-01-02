@@ -24,6 +24,8 @@ const Dropdown = ({ Sort }) => {
 
   const { mensClothes, setMensClothes } = useCurrentContext();
   const { womensCloths, setWomensCloths } = useCurrentContext();
+  const {clothes, setClothes} = useCurrentContext();
+
 
   // const dispatch = useDispatch();
   //   const { data, loading, error } = useSelector((state) => state.product);
@@ -48,7 +50,7 @@ const Dropdown = ({ Sort }) => {
     }
   };
 
-  const [clothes, setClothes] = useState([]);
+  // const [clothes, setClothes] = useState([]);
 
   useEffect(() => {
     const fetchColor = async () => {
@@ -94,6 +96,7 @@ const Dropdown = ({ Sort }) => {
       console.log("data", data);
       setMensClothes(data.data);
       setWomensCloths(data.data);
+      setClothes(data.data);
 
       return data;
     } catch (error) {

@@ -18,6 +18,7 @@ import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
 import CardTable from "./components/CardTable";
 import SearchCategories from "./pages/SearchCategories";
+import Orders from "./pages/Orders";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/cardtable" element={<CardTable />} />
             <Route path="/search/:inputValue" element={<SearchCategories />} />
+            <Route path="/order" element={<Orders />} />
           </Routes>
         </div>
         <div className="my-footer">

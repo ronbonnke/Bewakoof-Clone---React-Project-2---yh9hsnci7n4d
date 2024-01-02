@@ -34,8 +34,8 @@ const productTypeRoutes = [
   "/men",
   "/women",
   "/search/best seller",
-  "/air",
-  "/merch-store",
+  "/comingsoon",
+  "/comingsoon",
 ];
 
 function ProductType() {

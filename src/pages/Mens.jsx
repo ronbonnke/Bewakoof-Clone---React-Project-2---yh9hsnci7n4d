@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/mens/Mens.css'
 import Card from '../components/Card';
-// import { Dropdown } from 'semantic-ui-react';
-// import Dropdown from '../components/Dropdown';
 import Dropdown from '../components/Dropdown';
 import { useCurrentContext } from '../context/CurrentProvider';
 

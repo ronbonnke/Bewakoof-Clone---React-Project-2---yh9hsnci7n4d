@@ -3,8 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import Dropdown from '../components/Dropdown';
 import Card from '../components/Card';
 import "../styles/searchcategory/Searchcategory.css"
+import { useCurrentContext } from '../context/CurrentProvider';
+
 const SearchCategories = () => {
-  const [clothes, setClothes] = useState([]);
+  const { clothes, setClothes } = useCurrentContext();
   const [filteredClothes, setFilteredClothes] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   const { inputValue } = useParams();
@@ -34,42 +36,37 @@ const SearchCategories = () => {
     fetchSearchCategories();
   }, []);
 
-  const filteredSuggestions = clothes.filter((item) => {
-    // console.log("item", item);
-    const lowerCasedInput = inputValue.toLowerCase();
+  const filteredSuggestions = Array.isArray(clothes)
+    ? clothes.filter((item) => {
+        const lowerCasedInput = inputValue.toLowerCase();
 
-    return (
-      item.name.toLowerCase().includes(lowerCasedInput) ||
-      (item.color && item.color.toLowerCase().includes(lowerCasedInput)) ||
-      (item.sellerTag &&
-        item.sellerTag.toLowerCase().includes(lowerCasedInput)) ||
-      (item.subCategory &&
-        item.subCategory.toLowerCase().includes(lowerCasedInput)) ||
-      (Array.isArray(item.size) &&
-        item.size.some(
-          (size) =>
-            typeof size === "string" &&
-            size.toLowerCase().includes(lowerCasedInput)
-        ))
-    );
-  });
+        return (
+          item.name.toLowerCase().includes(lowerCasedInput) ||
+          (item.color && item.color.toLowerCase().includes(lowerCasedInput)) ||
+          (item.sellerTag && item.sellerTag.toLowerCase().includes(lowerCasedInput)) ||
+          (item.subCategory && item.subCategory.toLowerCase().includes(lowerCasedInput)) ||
+          (Array.isArray(item.size) &&
+            item.size.some(
+              (size) =>
+                typeof size === "string" &&
+                size.toLowerCase().includes(lowerCasedInput)
+            ))
+        );
+      })
+    : [];
 
   return (
-      <div className="Box1">
-          <div className="Drops1">
-            <Dropdown />
-          </div>
-          <div className="container-z">
-            {filteredSuggestions.map((item) => (
-              <Card item={item} key={item._id} />
-            ))}
-          </div>
-        </div>
+    <div className="Box1">
+      <div className="Drops1">
+        <Dropdown />
+      </div>
+      <div className="container-z">
+        {filteredSuggestions.map((item) => (
+          <Card item={item} key={item._id} />
+        ))}
+      </div>
+    </div>
   );
 };
 
 export default SearchCategories;
-
-
-
-

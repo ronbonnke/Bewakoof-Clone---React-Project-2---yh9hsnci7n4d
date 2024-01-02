@@ -14,7 +14,8 @@ function CurrentProvider({children}) {
     const [dummyreviews, setdummyReviews] = useState([]);
     const [mensClothes, setMensClothes] = useState([]);
     const [womensCloths, setWomensCloths] = useState([]);
-
+    const [clothes, setClothes] = useState([]);
+    
    
 
   return (
@@ -33,7 +34,9 @@ function CurrentProvider({children}) {
         mensClothes,
         setMensClothes,
         womensCloths,
-        setWomensCloths
+        setWomensCloths,
+        clothes,
+        setClothes
       }}>
         {children}
     </CurrentContext.Provider>

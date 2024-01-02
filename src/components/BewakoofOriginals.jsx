@@ -1,6 +1,5 @@
-// BewakoofOriginals.jsx
-
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/bewakooforginals/BewakoofOriginals.css';
 
 const categoryImages = [
@@ -12,6 +11,7 @@ const categoryImages = [
 
 function BewakoofOriginals() {
   const [currentPage, setCurrentPage] = useState(0);
+  const navigate = useNavigate();
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => (prevPage + 2) % categoryImages.length);
@@ -25,13 +25,19 @@ function BewakoofOriginals() {
     return () => clearInterval(interval);
   }, [currentPage]);
 
+  const handleImageClick = () => {
+    // Add your navigation logic here
+    // For example, navigate to a specific route when an image is clicked
+    navigate('/search/trending');
+  };
+
   return (
     <div>
       <h2 className="bewakoof-originals-heading">BEWAKOOF ORIGINALS</h2>
       <div className="bewakoof-originals-container">
         <div className="bewakoof-originals-slider">
           {categoryImages.slice(currentPage, currentPage + 2).map((image, index) => (
-            <div className="bewakoof-originals-item" key={index}>
+            <div className="bewakoof-originals-item" key={index} onClick={handleImageClick}>
               <div className="bewakoof-originals-image-container">
                 <img src={image} alt={`Category ${currentPage + index + 1}`} />
               </div>
