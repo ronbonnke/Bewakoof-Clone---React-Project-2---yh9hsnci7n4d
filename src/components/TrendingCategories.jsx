@@ -35,7 +35,7 @@ const categoryImages = [
   },
   {
     image: "https://shop.bewakoof.com/cdn/shop/files/Trending-Categories-Tile-Pyjamas-women--1--1701345872.webp?v=1701346487",
-    route: "/search/new arrival",
+    route: "/search/women",
   },
   {
     image: "https://shop.bewakoof.com/cdn/shop/files/TrendingCategories-157x118-joggers-women-1690540355_1_9592cb15-5ba8-44b5-aa7c-32bde019f6b7.webp?v=1699522207",
@@ -43,15 +43,15 @@ const categoryImages = [
   },
   {
     image: "https://shop.bewakoof.com/cdn/shop/files/Trending-Categories-Tile-sweaters-1699603687.webp?v=1700036096",
-    route: "/search/best sellers",
+    route: "/search/trending",
   },
   {
     image: "https://shop.bewakoof.com/cdn/shop/files/Trending-Categories-Tile-Oversized-Tshirts-men-1701241800.webp?v=1701347586",
-    route: "/search/jogger",
+    route: "/search/shirt",
   },
   {
     image: "https://shop.bewakoof.com/cdn/shop/files/Trending-Categories-Co-Ords-Sets-Pyjamas-women-1701345874.webp?v=1701346487",
-    route: "/search/jogger",
+    route: "/search/trending",
   },
   // Add more images and routes as needed
 ];

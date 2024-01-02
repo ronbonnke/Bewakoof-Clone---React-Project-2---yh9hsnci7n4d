@@ -15,9 +15,9 @@ const categoryImages = [
 ];
 
 const categoryTitles = [
-  "Sale",
-  "Winterwear",
-  "Official Merch",
+  "Trending",
+  "New Arrivals",
+  "Top Rated",
   "Custom",
   "Men",
   "Women",
@@ -29,7 +29,7 @@ const categoryTitles = [
 const productTypeRoutes = [
   "/search/trending",
   "/search/new arrival",
-  "/official-merch",
+  "/search/Top rated",
   "/custom",
   "/men",
   "/women",
