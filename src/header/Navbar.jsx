@@ -52,7 +52,7 @@ console.log("suggestions",suggestions)
       {/* Navigation Links */}
       <Link to="/men">Mens</Link>
       <Link to="/women">Womens</Link>
-      <Link to="/comingsoon">MobileCovers</Link>
+      <a1><Link to="/comingsoon">MobileCovers</Link></a1>
 
       {/* Search Bar */}
       

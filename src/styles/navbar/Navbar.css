@@ -12,6 +12,7 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  min-width: 320px;
 }
 
 .navbar a {
@@ -79,43 +80,6 @@ body {
 
 .flag img {
   border-radius: 50%;
-}
-
-@media screen and (max-width: 320px) {
-  .navbar {
-    background-color: #ffd84d; /* Set background color for smaller screens */
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .navbar img {
-    height: 15px; /* Adjust logo size for smaller screens */
-    margin-right: 3px;
-  }
-
-  .navbar a {
-    margin: 3px 3px;
-    font-size: 6px; /* Adjust text size */
-  }
-
-  .search-bar {
-    margin: 3px 3px;
-  }
-
-  .search-input {
-    width: calc(100% - 45px); /* Adjust width for smaller screens */
-    padding: 1px; /* Adjust padding */
-    background-size: 20px; /* Adjust icon size */
-    padding-left: 35px; /* Adjust as needed based on the icon size */
-    font-size: 6px; /* Adjust text size */
-    text-align: center; /* Center text */
-  }
-
-  .wishlist-text,
-  .flag,
-  .cart-count {
-    display: none; /* Hide wishlist text, India flag, and cart count */
-  }
 }
 
 .search-box {
@@ -308,6 +272,47 @@ body {
   .wishlist-text,
   .flag,
   .cart-count {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar {
+    background-color: #ffd84d; /* Set background color for smaller screens */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .navbar img {
+    height: 20px; /* Adjust logo size for smaller screens */
+    margin-right: 3px;
+  }
+
+  .navbar a {
+    /* margin: 3px 3px; */
+    font-size: 6px; /* Adjust text size */
+  }
+
+  .search-bar {
+    margin: 3px 3px;
+    padding-top: 5px;
+  }
+
+  .search-input {
+    width: calc(80% - 8px); /* Adjust width for smaller screens */
+    background-size: 15px; /* Adjust icon size */
+    padding-left: 10px;
+    font-size: 6px; /* Adjust text size */
+    text-align: center;
+  }
+
+  .wishlist-text,
+  .flag,
+  .cart-count {
+    display: none; /* Hide wishlist text, India flag, and cart count */
+  }
+
+  .navbar a1 {
     display: none;
   }
 }
