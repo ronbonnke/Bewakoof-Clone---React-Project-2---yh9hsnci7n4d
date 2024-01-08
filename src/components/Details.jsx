@@ -175,7 +175,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
   return (
     <div>
       <div className="Container">
-        <div className="One">
+        <div className="One1">
           {item.images &&
             item.images.map((source, index) => (
               <div key={index}>
@@ -184,7 +184,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
             ))}
         </div>
 
-        <div className="Two">
+        <div className="Two2">
           {item.images && item.images.length > 0 ? (
             <img src={item.images[number]} alt="Not Available" />
           ) : (
