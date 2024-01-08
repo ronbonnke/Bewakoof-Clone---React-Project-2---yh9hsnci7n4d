@@ -290,12 +290,13 @@ body {
 
   .navbar a {
     /* margin: 3px 3px; */
-    font-size: 6px; /* Adjust text size */
+    font-size: 6px;
   }
 
   .search-bar {
-    margin: 3px 3px;
     padding-top: 5px;
+    margin-left: 0px;
+    /* margin-right: 10px; */
   }
 
   .search-input {
