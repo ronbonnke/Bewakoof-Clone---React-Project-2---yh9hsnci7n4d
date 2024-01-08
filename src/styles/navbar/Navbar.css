@@ -274,9 +274,85 @@ body {
   .cart-count {
     display: none;
   }
-}
+  .navbar {
+    background-color: #ffd84d; /* Set background color for smaller screens */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
-@media screen and (max-width: 320px) {
+  .navbar img {
+    height: 20px; /* Adjust logo size for smaller screens */
+    margin-right: 3px;
+  }
+
+  .navbar a {
+    /* margin: 3px 3px; */
+    font-size: 6px;
+  }
+
+  .search-bar {
+    padding-top: 5px;
+    margin-left: 0px;
+    /* margin-right: 10px; */
+  }
+
+  .search-input {
+    width: calc(80% - 8px); /* Adjust width for smaller screens */
+    background-size: 15px; /* Adjust icon size */
+    padding-left: 10px;
+    font-size: 6px; /* Adjust text size */
+    text-align: center;
+  }
+
+  .wishlist-text,
+  .flag,
+  .cart-count {
+    display: none; /* Hide wishlist text, India flag, and cart count */
+  }
+
+  .navbar a1 {
+    display: none;
+  }
+
+  .navbar {
+    background-color: #ffd84d; /* Set background color for smaller screens */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .navbar img {
+    height: 20px; /* Adjust logo size for smaller screens */
+    margin-right: 3px;
+  }
+
+  .navbar a {
+    /* margin: 3px 3px; */
+    font-size: 6px;
+  }
+
+  .search-bar {
+    padding-top: 5px;
+    margin-left: 0px;
+    /* margin-right: 10px; */
+  }
+
+  .search-input {
+    width: calc(80% - 8px); /* Adjust width for smaller screens */
+    background-size: 15px; /* Adjust icon size */
+    padding-left: 10px;
+    font-size: 6px; /* Adjust text size */
+    text-align: center;
+  }
+
+  .wishlist-text,
+  .flag,
+  .cart-count {
+    display: none; /* Hide wishlist text, India flag, and cart count */
+  }
+
+  .navbar a1 {
+    display: none;
+  }
   .navbar {
     background-color: #ffd84d; /* Set background color for smaller screens */
     flex-wrap: wrap;

@@ -80,7 +80,7 @@
   color: rgb(14, 206, 190);
   width: auto;
 }
-@media only screen and (min-width: 411px) and (max-width: 800px) {
+@media only screen and (min-width: 320px) and (max-width: 800px) {
   .Box {
     width: 90%;
   }
@@ -109,5 +109,14 @@
   }
   .p2 {
     font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .containers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 75%;
+    margin: 0px auto;
   }
 }
