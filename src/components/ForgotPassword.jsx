@@ -54,7 +54,7 @@ const UpdatePassword = () => {
     }
   };
   return (
-    <div className="container">
+    <div className="container-k">
       <div>
         <img
           className="con-img"

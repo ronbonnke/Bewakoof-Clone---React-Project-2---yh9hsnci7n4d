@@ -83,27 +83,28 @@ body {
 }
 
 .search-box {
-  /* position: absolute,
-  backgroundColor: "grey",
-  top: "20%",
-  left: "60%",
-  width: "380px",
-  // height: "100vh",
-  zIndex: 1000,
-  boxShadow: "rgba(41, 45, 53, 0.15) 0px 0px 12px", */
-  /* position: absolute; */
-  background-color: grey;
+  background-color: #fff;
   left: 60%;
   color: black;
-  width: 380px;
+  width: 320px;
   max-height: 400px;
   min-height: 0px;
   z-index: 1000;
   box-shadow: rgba(41, 45, 53, 0.15);
   overflow-y: scroll;
   position: absolute;
-  /* margin-top: 30.5%; */
-  top: 10%;
+  top: 9.3%;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
 }
 
 body {
@@ -180,7 +181,7 @@ body {
 }
 
 .suggestionsList li:hover {
-  background-color: #333;
+  background-color: lightgray;
 }
 
 .wishlist-icon,
@@ -299,9 +300,37 @@ body {
   .search-input {
     width: calc(80% - 8px); /* Adjust width for smaller screens */
     background-size: 15px; /* Adjust icon size */
-    padding-left: 10px;
-    font-size: 6px; /* Adjust text size */
-    text-align: center;
+    /* padding-left: 10px; */
+    font-size: 4px; /* Adjust text size */
+    /* text-align: center; */
+  }
+
+  .search-box {
+    background-color: #fff;
+    left: 8%;
+    color: black;
+    width: 280px;
+    max-height: 320px;
+    min-height: 0px;
+    font-size: 4px;
+    z-index: 1000;
+    box-shadow: rgba(41, 45, 53, 0.15);
+    overflow-y: scroll;
+    position: absolute;
+    top: 13.2%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+
+    /* Webkit (Chrome, Safari, Opera) */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
   }
 
   .wishlist-text,
@@ -321,7 +350,7 @@ body {
   }
 
   .navbar img {
-    height: 20px; /* Adjust logo size for smaller screens */
+    height: 15px; /* Adjust logo size for smaller screens */
     margin-right: 3px;
   }
 
@@ -391,5 +420,9 @@ body {
 
   .navbar a1 {
     display: none;
+  }
+
+  .suggestionsList li:hover {
+    background-color: lightgray;
   }
 }

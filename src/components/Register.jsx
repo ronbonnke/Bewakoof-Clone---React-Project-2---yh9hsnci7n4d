@@ -84,7 +84,7 @@ const Register = ({ setLoggedInStatus, setUserName, setEMail }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-v">
       <form>
         <div>
           <img
