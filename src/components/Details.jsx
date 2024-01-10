@@ -193,7 +193,7 @@ const Details = ({ item, loading, error, review, fetchProductDetails }) => {
         </div>
 
         <div className="Three">
-          <h6>Bewakoof</h6>
+          <h6>Bewakoof ®</h6>
           <p>{item.name}</p>
           <div className="Rate">
             <p>

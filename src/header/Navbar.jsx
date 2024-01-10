@@ -92,10 +92,11 @@ console.log("suggestions",suggestions)
       <div className="login">
         {/* <Link to={"/login"}> */}
         {loginStatus ? (
-        <button onClick={handleLogout}>Logout</button>
+          <Link>
+        <button className='login-z' onClick={handleLogout}>LOGOUT</button></Link>
       ) : (
         <Link to="/login">
-          <button>Login</button>
+          <button className='login-z'>LOGIN</button>
         </Link>
       )}
           

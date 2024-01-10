@@ -9,7 +9,7 @@ body {
   padding: 10px;
   display: flex;
   font-weight: bold;
-  width: 100%;
+  width: auto;
   justify-content: space-between;
   align-items: center;
   min-width: 320px;
@@ -34,17 +34,17 @@ body {
 }
 
 .search-input {
-  padding: 5px; /* Adjust padding for smaller size */
+  padding: 5px;
   border: 2px solid white;
   border-radius: 5px;
   background-image: url("https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-search-desktop.svg?v=114869412250897726531690205645");
   background-position: 10px center;
-  background-size: 20px; /* Make the icon a bit smaller */
+  background-size: 20px;
   background-repeat: no-repeat;
-  padding-left: 35px; /* Adjust padding-left for space between icon and text */
-  margin-right: 5px; /* Add space between icon and text */
-  width: calc(100% - 45px); /* Adjust width for smaller screens */
-  text-align: center; /* Center text */
+  padding-left: 35px;
+  margin-right: 5px;
+  width: calc(100% - 45px);
+  text-align: center;
 }
 
 .wishlist-icon,
@@ -53,7 +53,8 @@ body {
 .flag {
   display: flex;
   align-items: center;
-  margin-right: 5px; /* Adjust space between icons */
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 .wishlist-icon img,
@@ -66,7 +67,7 @@ body {
 
 .wishlist-text {
   font-size: 14px;
-  color: black; /* Set the color to black */
+  color: black;
   cursor: pointer;
 }
 
@@ -98,141 +99,35 @@ body {
   border-bottom-left-radius: 8px;
   scrollbar-width: thin;
   -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-  }
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* Webkit (Chrome, Safari, Opera) */
+.search-box::-webkit-scrollbar {
+  width: 5px;
 }
 
-.navbar {
-  background-color: #ffd84d;
-  color: #fff;
-  padding: 10px;
-  display: flex;
-  font-weight: bold;
-  width: auto;
-  justify-content: space-between;
-  align-items: center;
+.search-box::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
-.navbar a {
-  color: black;
-  text-decoration: none;
-  /* margin: 0 15px; */
-}
-
-.navbar img {
-  height: 40px;
-  width: auto;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.search-input {
-  padding: 5px; /* Adjust padding for smaller size */
-  border: 2px solid white;
-  border-radius: 5px;
-  background-image: url("https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-search-desktop.svg?v=114869412250897726531690205645");
-  background-position: 10px center;
-  background-size: 20px; /* Make the icon a bit smaller */
-  background-repeat: no-repeat;
-  padding-left: 35px; /* Adjust padding-left for space between icon and text */
-  margin-right: 5px; /* Add space between icon and text */
-  width: calc(100% - 45px); /* Adjust width for smaller screens */
-  text-align: center; /* Center text */
-}
-
-.suggestions-container {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: calc(100% - 4px);
-  background-color: white;
-  border: 2px solid white;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  max-height: 200px;
-  z-index: 1;
-}
-
-.suggestionsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.suggestionsList li {
-  padding: 8px;
-  cursor: pointer;
-}
-
-.suggestionsList li:hover {
-  background-color: lightgray;
-}
-
-.wishlist-icon,
-.cart-icon,
-.login,
-.flag {
-  display: flex;
-  align-items: center;
-  margin-right: 5px;
-}
-.wishlist-icon img,
-.cart-icon img {
-  height: 22px; /* Set the height to the desired size */
-  width: auto;
-  /* margin-right: 5px; */
-  cursor: pointer;
-}
-
-.wishlist-text {
-  font-size: 14px;
-  color: black; /* Set the color to black */
-  cursor: pointer;
-}
-
-.cart-count {
-  background-color: black;
-  color: #fff;
-  padding: 3px 6px;
-  border-radius: 50%;
-  font-size: 12px;
-}
-
-.flag img {
-  border-radius: 50%;
-}
-.navbar .login button {
-  background: none;
-  cursor: pointer;
+.login-z {
+  background-color: transparent;
   border: none;
   font-weight: bold;
-  font-size: 16px;
+  margin: auto;
 }
 
+/* Add your other styles here */
+
+/* Media Query for screens up to 320px */
 @media screen and (max-width: 320px) {
+  /* Adjust styles for smaller screens */
   .navbar {
     background-color: #ffd84d;
-    /* padding: 10px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 96%; /* Set width to 100% for smaller screens */
+    width: 96%;
   }
 
   .navbar img {
@@ -252,9 +147,7 @@ body {
 
   .search-input {
     height: 20px;
-    width: 10px;
     width: calc(100% - 40px);
-    /* padding: 1px; */
     background-size: 15px;
     margin-left: 20px;
     font-size: 6px;
@@ -262,12 +155,7 @@ body {
   }
 
   .navbar .login button {
-    background: none;
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
     font-size: 12px;
-    padding: 0;
   }
 
   .wishlist-text,
@@ -275,68 +163,45 @@ body {
   .cart-count {
     display: none;
   }
+
   .navbar {
-    background-color: #ffd84d; /* Set background color for smaller screens */
+    background-color: #ffd84d;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .navbar img {
-    height: 20px; /* Adjust logo size for smaller screens */
+    height: 20px;
     margin-right: 3px;
   }
 
   .navbar a {
-    /* margin: 3px 3px; */
     font-size: 6px;
   }
 
   .search-bar {
     padding-top: 5px;
     margin-left: 0px;
-    /* margin-right: 10px; */
   }
 
   .search-input {
-    width: calc(80% - 8px); /* Adjust width for smaller screens */
-    background-size: 15px; /* Adjust icon size */
-    /* padding-left: 10px; */
-    font-size: 4px; /* Adjust text size */
-    /* text-align: center; */
+    width: calc(80% - 8px);
+    background-size: 15px;
+    font-size: 6px;
   }
 
   .search-box {
-    background-color: #fff;
     left: 8%;
-    color: black;
     width: 280px;
     max-height: 320px;
-    min-height: 0px;
     font-size: 4px;
-    z-index: 1000;
-    box-shadow: rgba(41, 45, 53, 0.15);
-    overflow-y: scroll;
-    position: absolute;
     top: 13.2%;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    scrollbar-width: thin;
-    -ms-overflow-style: none;
-
-    /* Webkit (Chrome, Safari, Opera) */
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: transparent;
-    }
   }
 
   .wishlist-text,
   .flag,
   .cart-count {
-    display: none; /* Hide wishlist text, India flag, and cart count */
+    display: none;
   }
 
   .navbar a1 {
@@ -344,78 +209,37 @@ body {
   }
 
   .navbar {
-    background-color: #ffd84d; /* Set background color for smaller screens */
+    background-color: #ffd84d;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .navbar img {
-    height: 15px; /* Adjust logo size for smaller screens */
+    height: 15px;
     margin-right: 3px;
   }
 
   .navbar a {
-    /* margin: 3px 3px; */
     font-size: 6px;
   }
 
   .search-bar {
     padding-top: 5px;
     margin-left: 0px;
-    /* margin-right: 10px; */
   }
 
   .search-input {
-    width: calc(80% - 8px); /* Adjust width for smaller screens */
-    background-size: 15px; /* Adjust icon size */
+    width: calc(80% - 8px);
+    background-size: 15px;
     padding-left: 10px;
-    font-size: 6px; /* Adjust text size */
+    font-size: 6px;
     text-align: center;
   }
 
   .wishlist-text,
   .flag,
   .cart-count {
-    display: none; /* Hide wishlist text, India flag, and cart count */
-  }
-
-  .navbar a1 {
     display: none;
-  }
-  .navbar {
-    background-color: #ffd84d; /* Set background color for smaller screens */
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .navbar img {
-    height: 20px; /* Adjust logo size for smaller screens */
-    margin-right: 3px;
-  }
-
-  .navbar a {
-    /* margin: 3px 3px; */
-    font-size: 6px;
-  }
-
-  .search-bar {
-    padding-top: 5px;
-    margin-left: 0px;
-    /* margin-right: 10px; */
-  }
-
-  .search-input {
-    width: calc(80% - 8px); /* Adjust width for smaller screens */
-    background-size: 15px; /* Adjust icon size */
-    padding-left: 10px;
-    font-size: 6px; /* Adjust text size */
-    text-align: center;
-  }
-
-  .wishlist-text,
-  .flag,
-  .cart-count {
-    display: none; /* Hide wishlist text, India flag, and cart count */
   }
 
   .navbar a1 {
