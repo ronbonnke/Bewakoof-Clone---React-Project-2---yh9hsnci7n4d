@@ -15,6 +15,7 @@ function CurrentProvider({children}) {
     const [mensClothes, setMensClothes] = useState([]);
     const [womensCloths, setWomensCloths] = useState([]);
     const [clothes, setClothes] = useState([]);
+    const [cartNum, setCartnum] = useState([]);
     
    
 
@@ -36,7 +37,9 @@ function CurrentProvider({children}) {
         womensCloths,
         setWomensCloths,
         clothes,
-        setClothes
+        setClothes,
+        cartNum,
+        setCartnum,
       }}>
         {children}
     </CurrentContext.Provider>

@@ -85,7 +85,7 @@ const Register = ({ setLoggedInStatus, setUserName, setEMail }) => {
 
   return (
     <div className="container-v">
-      <form>
+      <form className="form-x">
         <div>
           <img
             className="logo"

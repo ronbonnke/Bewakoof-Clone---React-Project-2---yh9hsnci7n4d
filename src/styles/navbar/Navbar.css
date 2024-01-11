@@ -125,9 +125,13 @@ body {
   .navbar {
     background-color: #ffd84d;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    width: 96%;
+    width: auto;
+    object-fit: contain;
+    padding: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .navbar img {

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import "../styles/cart/Card02.css";
 import Card02 from '../components/Card02';
 
-
+import { useCurrentContext } from '../context/CurrentProvider';
 
 function AllCards() {
+  const {setCartnum,cartNum} = useCurrentContext();
 
   const [cart, setCart] = useState([]);
   const getCartItems = async () => {
@@ -22,12 +23,15 @@ function AllCards() {
       );
       const data = await response.json();
       setCart(data.data.items); 
+      
       console.log('cart', cart);
       console.log('response', data.data);
     } catch (error) {
       console.error('Error fetching cart:', error.message);
     }
   };
+  setCartnum(cart.length);
+  console.log(cartNum)
 
   useEffect(() => {
     getCartItems();

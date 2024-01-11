@@ -19,12 +19,13 @@ import Cart from "./pages/Cart";
 import CardTable from "./components/CardTable";
 import SearchCategories from "./pages/SearchCategories";
 import Orders from "./pages/Orders";
+import Address from "./pages/Address";
 
 function App() {
   return (
     <Router>
       <CurrentProvider>
-        <div className="my-header">
+        <div className="App">
           <Navbar />
           <Routes>
             <Route path="/" element={<Homepage />} />
@@ -43,6 +44,7 @@ function App() {
             <Route path="/cardtable" element={<CardTable />} />
             <Route path="/search/:inputValue" element={<SearchCategories />} />
             <Route path="/order" element={<Orders />} />
+            <Route path="/address" element={<Address />} />
           </Routes>
         </div>
         <div className="my-footer">

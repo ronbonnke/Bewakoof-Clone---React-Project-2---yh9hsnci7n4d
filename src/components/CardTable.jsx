@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Orders from "../pages/Orders";
 import "../styles/cardtable/CardTable.css";
+import Address from "../pages/Address";
 
 const CardTable = () => {
   const [total, setTotal] = useState(0);
@@ -148,10 +149,14 @@ const CardTable = () => {
 
         </div>
         {showModal && (
-        <Orders
-          handleClose={handleCloseModal}
-          total={cart1.totalPrice}
+        <Address 
+        handleClose={handleCloseModal}
         />
+        
+        // <Orders
+        //   handleClose={handleCloseModal}
+        //   total={cart1.totalPrice}
+        // />
       )}
       </div>
     </div>

@@ -11,6 +11,8 @@ const Navbar = () => {
   const {loginStatus, setLoginStatus} = useCurrentContext();
   const {forInput} = useCurrentContext();
   const [value, setValue] = useState();
+  const {cartNum} = useCurrentContext();
+  // const [cart, setCart] = useState([]);
   const [suggestions,setSuggestions] = useState([]);
   const handleLogout = () => {
     localStorage.clear();
@@ -37,6 +39,7 @@ const Navbar = () => {
 
   }
 console.log("suggestions",suggestions)
+console.log("cartNum",cartNum)
 
 
   return (
@@ -85,8 +88,10 @@ console.log("suggestions",suggestions)
           src="https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-cart-mobile.svg?v=134184629154633135331696418236"
           alt="Cart"
         />
-        <div className="cart-count">0</div>
+        <div className="cart-count">{cartNum}</div>
       </div></Link>
+
+      {/* ({cart.length} item{cart.length !== 1 ? 's' : ''}) */}
 
       {/* Login */}
       <div className="login">

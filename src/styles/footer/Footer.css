@@ -36,12 +36,12 @@ body {
   color: #ffd84d;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 0px) and (max-width: 380px) {
   body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    width: 103%;
+    width: 100%;
     min-height: 100vh;
   }
 
@@ -52,9 +52,12 @@ body {
     text-align: left;
     font-size: 6px;
     margin-top: auto;
-    width: 100%; /* Change from margin-top: 47% to margin-top: auto */
+    width: 96.8%; /* Change from margin-top: 47% to margin-top: auto */
   }
 
+  .bewakoof-info p {
+    margin: 2px;
+  }
   .footer-content {
     display: flex;
     justify-content: space-around;
