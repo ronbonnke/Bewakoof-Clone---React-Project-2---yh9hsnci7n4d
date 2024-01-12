@@ -70,7 +70,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-l">
       <form>
         <div className="logo-logo"> 
           <img
@@ -78,7 +78,7 @@ const Login = () => {
             alt=""
           />
         </div>
-        <h2 className="heading">Login</h2>
+        <h2 className="heading-header">Login</h2>
 
         <h4></h4>
 
@@ -113,18 +113,18 @@ const Login = () => {
             </button>
             <br />
             <div className="buttons">
-              <Link to="/register" className="link-button">
+              <Link to="/register" >
                 <div>
                   <span>
-                    <button>Create Account</button>
+                    <button className="link-button">Create Account</button>
                   </span>
                 </div>
               </Link>
 
-              <Link to="/password" className="forgot-button">
+              <Link to="/password" >
                 <div>
                   <span>
-                    <button>Forgot Password</button>
+                    <button className="forgot-button">Forgot Password</button>
                   </span>
                 </div>
               </Link>

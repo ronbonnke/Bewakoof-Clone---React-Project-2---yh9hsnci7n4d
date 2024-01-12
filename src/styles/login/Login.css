@@ -1,6 +1,4 @@
-/* Login.css */
-
-.container {
+.container-l {
   width: 100%;
   max-width: 450px;
   height: 500px;
@@ -10,6 +8,10 @@
   overflow: hidden;
   margin-bottom: 65px;
   margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering horizontally */
+  justify-content: center; /* Centering vertically */
 }
 
 .form {
@@ -27,15 +29,18 @@
   margin-bottom: 10px;
 }
 
-.heading {
+.heading-header {
   color: #363636;
+  /* justify-content: center; */
+  text-align: center;
   font-size: 25px;
 }
 
 .input-box {
-  margin: 8px;
+  margin: auto;
+  padding-bottom: 5px;
   height: 40px;
-  width: 80%;
+  width: 100%;
   border-radius: 5px;
   border: 1.6px solid lightgrey;
   text-align: center;
@@ -46,11 +51,13 @@
   margin: 8px;
 }
 
-.login-button {
+.login-button,
+.link-button,
+.forgot-button {
   cursor: pointer;
-  margin: 8px;
+  margin: auto;
   height: 50px;
-  width: 80%;
+  width: 100%;
   font-size: bolder;
   border-radius: 5px;
   border: 1px solid grey;
@@ -58,21 +65,22 @@
   color: grey;
   background: #ccc;
   font-weight: bolder;
+  text-align: center;
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .link-button,
 .forgot-button {
-  margin: 8px;
+  height: 35px;
+  margin-top: 10px; /* Adjusted margin-top */
 }
 
 @media screen and (max-width: 320px) {
-  .container {
+  .container-l {
     width: 100%;
     max-width: 300px;
     height: 450px;

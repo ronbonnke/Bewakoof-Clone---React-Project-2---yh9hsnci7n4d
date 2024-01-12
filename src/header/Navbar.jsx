@@ -75,7 +75,7 @@ console.log("cartNum",cartNum)
       <Link to={"/wishlist"}>
       <div className="wishlist-icon">
         <img
-          src="https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-wishlist-desktop.svg?v=138385657585356751091690205653"
+          src="https://shop.bewakoof.com/cdn/shop/t/22/assets/icon-wishlist-desktop.svg?v=138385657585356751091704184551"
           alt="Wishlist"
         />
         <span className="wishlist-text">Wishlist</span>
@@ -85,7 +85,7 @@ console.log("cartNum",cartNum)
       <Link to={"/cart"}>
       <div className="cart-icon">
         <img
-          src="https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-cart-mobile.svg?v=134184629154633135331696418236"
+          src="hhttps://shop.bewakoof.com/cdn/shop/t/22/assets/icon-cart-mobile.svg?v=134184629154633135331704184555"
           alt="Cart"
         />
         <div className="cart-count">{cartNum}</div>
