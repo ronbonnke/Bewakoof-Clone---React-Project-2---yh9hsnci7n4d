@@ -13,36 +13,32 @@ const UpdatePassword = () => {
 
   const handleUpdatePassword = async () => {
     try {
-      const authToken = localStorage.getItem("token");
-
-      // const response = await axios.patch(
-      //   "/user/updateMyPassword",
-      //   {
-      //     name: "test6969",
-      //     email: "test6969@gmail.com",
-      //     passwordCurrent: currentPassword,
-      //     password: newPassword,
-      //     appType: "ott",
-      //   },
-      //   // {
-      //   //   headers: {
-      //   //     projectID: "f104bi07c490",
-      //   //     Authorization: `Bearer ${authToken}`,
-      //   //   },
-      //   // }
-      // );
-      // const data = response.data;
-      const data = searchApi(
-        "name",
-        "test123@gmail.com",
-        currentPassword,
-        newPassword,
-        "ott"
+      const response = await fetch(
+        "https://academics.newtonschool.co/api/v1/user/updateMyPassword",
+        {
+          method: "PATCH ",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            projectID: "f104bi07c490",
+          },
+          body: JSON.stringify({
+            name: "test6969",
+            email: "test6969@gmail.com",
+            passwordCurrent: currentPassword,
+            password: newPassword,
+            appType: "ecommerce",
+          }),
+        }
       );
 
+      const data = await response.json();
+
       if (data.status === "success") {
+        // Password updated successfully
         console.log("Password updated successfully");
-        navigate("/");
+        handleClose();
+        // Navigate to the home page
       } else {
         setError(
           data.message || "An error occurred while updating the password"
@@ -102,3 +98,7 @@ const UpdatePassword = () => {
 };
 
 export default UpdatePassword;
+
+
+
+

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/address/Address.css";
+import { useCurrentContext } from "../context/CurrentProvider";
 
 const Address = ({ handleClose }) => {
   const navigate = useNavigate();
+  const { address, setAddress } = useCurrentContext();
+
   const [formValues, setFormValues] = useState({
     country: "India",
     fullName: "",
@@ -19,12 +22,14 @@ const Address = ({ handleClose }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+    setAddress({ ...address, [name]: value }); // Update context state
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const { street, city, state, country, zipCode } = formValues;
-    const addressData = { street, city, state, country, zipCode };
+    const updatedAddress = { street, city, state, country, zipCode };
+    setAddress(updatedAddress); // Update context state
     navigate("/payment");
   };
 
@@ -106,7 +111,7 @@ const Address = ({ handleClose }) => {
           <label htmlFor="street">Flat no./Building, Street name</label>
           <input
             type="text"
-            placeholder="Flat no./Building, Street name"
+            placeholder="Flat no. / Building, Street name"
             required
             name="street"
             onChange={handleChange}

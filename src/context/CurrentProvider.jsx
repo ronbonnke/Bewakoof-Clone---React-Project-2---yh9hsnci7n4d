@@ -16,6 +16,7 @@ function CurrentProvider({children}) {
     const [womensCloths, setWomensCloths] = useState([]);
     const [clothes, setClothes] = useState([]);
     const [cartNum, setCartnum] = useState([]);
+    const [address, setAddress] = useState([]);
     
    
 
