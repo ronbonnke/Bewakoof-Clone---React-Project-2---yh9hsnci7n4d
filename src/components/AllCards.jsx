@@ -6,8 +6,8 @@ import { useCurrentContext } from '../context/CurrentProvider';
 
 function AllCards() {
   const {setCartnum,cartNum} = useCurrentContext();
+  const {cart,setCart} = useCurrentContext();
 
-  const [cart, setCart] = useState([]);
   const getCartItems = async () => {
     try {
       const response = await fetch(
@@ -49,9 +49,7 @@ function AllCards() {
         cart.map((item) => (
           <>
           <div className="cart-products" key={item.product._id}>
-            {/* Render your card or item details here */}
-            {/* <img src={item.product.displayImage} alt="product image" />
-            <h3>{item.product.name}</h3> */}
+          
 
              <Card02 item={item}/>
           </div>

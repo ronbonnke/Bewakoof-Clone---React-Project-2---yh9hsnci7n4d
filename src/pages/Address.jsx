@@ -33,6 +33,7 @@ const Address = ({ handleClose }) => {
     navigate("/payment");
   };
 
+  console.log("setAddress", setAddress);
   return (
     <div className="modal-container">
       <form className="address-form" onSubmit={handleSubmit}>

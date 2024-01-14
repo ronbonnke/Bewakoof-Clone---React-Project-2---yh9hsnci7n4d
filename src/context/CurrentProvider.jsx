@@ -16,13 +16,24 @@ function CurrentProvider({children}) {
     const [womensCloths, setWomensCloths] = useState([]);
     const [clothes, setClothes] = useState([]);
     const [cartNum, setCartnum] = useState([]);
-    const [address, setAddress] = useState([]);
+    const [cart, setCart] = useState([]);
+
+    const [address, setAddress] = useState({
+      street: "", 
+      city: "",
+      state: "", 
+      country: "",
+      zipCode: "",
+    });
+    const [id,setId] = useState([]);
     
    
 
   return (
       <CurrentContext.Provider
     value={{
+        cart,
+        setCart,
         loginStatus,
         setLoginStatus,
         Number,
@@ -41,6 +52,10 @@ function CurrentProvider({children}) {
         setClothes,
         cartNum,
         setCartnum,
+        address,
+        setAddress,
+        id,
+        setId,
       }}>
         {children}
     </CurrentContext.Provider>

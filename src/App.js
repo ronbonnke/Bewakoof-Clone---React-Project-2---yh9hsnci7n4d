@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CurrentProvider from "./context/CurrentProvider";
 import Mens from "./pages/Mens";
 import Womens from "./pages/Womens";
-// import Details from "./components/Details";
 import Product from "./pages/Product";
 import ComingSoon from "./pages/Comingsoon";
 import WishList from "./pages/WishList";
@@ -20,7 +19,8 @@ import CardTable from "./components/CardTable";
 import SearchCategories from "./pages/SearchCategories";
 import Orders from "./pages/Orders";
 import Address from "./pages/Address";
-
+import Payment from "./pages/Payment";
+import PaymentMethod from "./components/PaymentMethod";
 function App() {
   return (
     <Router>
@@ -45,6 +45,8 @@ function App() {
             <Route path="/search/:inputValue" element={<SearchCategories />} />
             <Route path="/order" element={<Orders />} />
             <Route path="/address" element={<Address />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/paymentmethod" element={<PaymentMethod />} />
           </Routes>
         </div>
         <div className="my-footer">
