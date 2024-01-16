@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import '../styles/payments/BankCardNo.css'
+import { useNavigate } from "react-router-dom";
 import { useCurrentContext } from '../context/CurrentProvider';
 
 const BankCardNo = () => {
   const navigate = useNavigate();
-//   const { address } = useSelector((state) => state.states);
-const {cart,setCart,address} = useCurrentContext();
-console.log("cart",cart)
-
+  const { cart, address } = useCurrentContext();
+  console.log("cart", cart);
 
   const [formValues, setFormValues] = useState({
     name: "",
@@ -24,10 +22,14 @@ console.log("cart",cart)
   };
 
   const handleSubmit = async (e) => {
-    
-  const orderDataArray = [];
     e.preventDefault();
-    const item = cart.some((item) =>{
+
+
+    
+
+    try {
+      // Use Promise.all to wait for all API calls to complete
+      await Promise.all(cart.map(async (item) => {
         console.log("id", item.product._id);
         const orderData = {
           productId: item.product._id,
@@ -35,62 +37,36 @@ console.log("cart",cart)
           addressType: "HOME",
           address,
         };
-        console.log("orderData",orderData)
+        console.log("orderData", orderData);
 
         setShow(true);
-        console.log(formValues); 
-        orderDataArray.push(orderData);
+        console.log(formValues);
 
-    })
-
-    try {
-        // Make the API call to submit the order
         const response = await fetch("https://academics.newtonschool.co/api/v1/ecommerce/order", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+            "projectId": "ntymfpzixzjc", // Make sure this is the correct projectId and it's a string
           },
-          body: JSON.stringify(orderDataArray),
+          body: JSON.stringify(orderData),
         });
-    
+        
+        
+
         const data = await response.json();
-    
-        // Check if the API call is successful
+
         if (data.success) {
-          // Your success logic here
           console.log("Order submitted successfully");
-          navigate("/success"); // Redirect to a success page or handle as needed
+          navigate("/success");
         } else {
-          // Handle API response with errors
           const error = data.error || "Unknown error";
           console.error("Order submission failed:", error);
         }
-      } catch (error) {
-        // Handle errors during the API call
-        console.error("Network error:", error);
-      }
-
-
-
-    // for (const item of cart) {
-    //   for (const productItem of item.product) {
-    //     console.log("id", productItem);
-    //     const orderData = {
-    //       productId: productItem._id,
-    //       quantity: 1,
-    //       address,
-    //     };
-    //     console.log("orderData",orderData)
-
-    //     setShow(true);
-    //     console.log(formValues);
-    //   }
-    // }
-
-
-
-
+      }));
+    } catch (error) {
+      console.error("Network error:", error);
+    }
   };
 
   const handleClose = () => {
@@ -98,14 +74,12 @@ console.log("cart",cart)
     navigate("/");
   };
 
-
-  console.log("")
   return (
     <div>
       {/* <SuccessModal */}
-        {/* show={show} */}
-        {/* handleClose={handleClose} */}
-        {/* message={"Your Payment Was Successfully completed "} */}
+      {/* show={show} */}
+      {/* handleClose={handleClose} */}
+      {/* message={"Your Payment Was Successfully completed "} */}
       {/* /> */}
       <form onSubmit={handleSubmit} className="modelpayment">
         <div className="mb">
@@ -179,7 +153,7 @@ console.log("cart",cart)
           This transaction you make is totally secure. We don't save your CVV
           number.
         </p>
-        <button type="submit" className="bon" >
+        <button type="submit" className="bon">
           Submit
         </button>
       </form>
