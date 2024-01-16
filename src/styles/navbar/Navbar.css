@@ -12,7 +12,6 @@ body {
   width: auto;
   justify-content: space-between;
   align-items: center;
-  min-width: 320px;
 }
 
 .navbar a {
@@ -28,20 +27,15 @@ body {
 
 .search-bar {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 .search-input {
   padding: 5px;
   border: 2px solid white;
   border-radius: 5px;
-  background-image: url("https://shop.bewakoof.com/cdn/shop/t/3/assets/icon-search-desktop.svg?v=114869412250897726531690205645");
-  background-position: 10px center;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  padding-left: 35px;
   margin-right: 5px;
   width: calc(100% - 45px);
   text-align: center;
@@ -59,7 +53,7 @@ body {
 
 .wishlist-icon img,
 .cart-icon img {
-  height: 25px;
+  height: 20px;
   width: auto;
   margin-right: 5px;
   cursor: pointer;
@@ -117,21 +111,14 @@ body {
   margin: auto;
 }
 
-/* Add your other styles here */
-
-/* Media Query for screens up to 320px */
-@media screen and (max-width: 320px) {
-  /* Adjust styles for smaller screens */
+@media only screen and (min-width: 250px) and (max-width: 500px) {
   .navbar {
     background-color: #ffd84d;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
-    width: auto;
-    object-fit: contain;
-    padding: 0px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 6px;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .navbar img {
@@ -150,10 +137,10 @@ body {
   }
 
   .search-input {
-    height: 20px;
-    width: calc(100% - 40px);
-    background-size: 15px;
-    margin-left: 20px;
+    height: 12px;
+    width: calc(80% - 8px);
+    background-size: 2px;
+    margin-left: 4px;
     font-size: 6px;
     text-align: center;
   }
@@ -167,87 +154,17 @@ body {
   .cart-count {
     display: none;
   }
-
-  .navbar {
-    background-color: #ffd84d;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .navbar img {
-    height: 20px;
-    margin-right: 3px;
-  }
-
-  .navbar a {
-    font-size: 6px;
-  }
-
-  .search-bar {
-    padding-top: 5px;
-    margin-left: 0px;
-  }
-
-  .search-input {
-    width: calc(80% - 8px);
-    background-size: 15px;
-    font-size: 6px;
-  }
+  /* 
+  .cart-icon img {
+    height: 16px;
+  } */
 
   .search-box {
-    left: 8%;
-    width: 280px;
+    left: 1%;
+    width: 200px;
     max-height: 320px;
     font-size: 4px;
     top: 13.2%;
-  }
-
-  .wishlist-text,
-  .flag,
-  .cart-count {
-    display: none;
-  }
-
-  .navbar a1 {
-    display: none;
-  }
-
-  .navbar {
-    background-color: #ffd84d;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .navbar img {
-    height: 15px;
-    margin-right: 3px;
-  }
-
-  .navbar a {
-    font-size: 6px;
-  }
-
-  .search-bar {
-    padding-top: 5px;
-    margin-left: 0px;
-  }
-
-  .search-input {
-    width: calc(80% - 8px);
-    background-size: 15px;
-    padding-left: 10px;
-    font-size: 6px;
-    text-align: center;
-  }
-
-  .wishlist-text,
-  .flag,
-  .cart-count {
-    display: none;
-  }
-
-  .navbar a1 {
-    display: none;
   }
 
   .suggestionsList li:hover {

@@ -90,7 +90,7 @@
   font-weight: bolder;
 }
 .Options > button:nth-child(2) {
-  background-color: #47a5a9;
+  background-color: rgb(3, 94, 51);
   font-weight: bolder;
 }
 .Empty {

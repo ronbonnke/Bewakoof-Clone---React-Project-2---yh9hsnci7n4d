@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import Orders from "../pages/Orders";
 import "../styles/cardtable/CardTable.css";
 import Address from "../pages/Address";
+import { useCurrentContext } from "../context/CurrentProvider";
 
 const CardTable = () => {
   const [total, setTotal] = useState(0);
   const [show, setShow] = useState(false);
-  const [cart, setCart] = useState([]);
+  const {cart, setCart} = useCurrentContext([]);
   const [cart1, setCart1] = useState([]);
-  
+
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const getCartItems = async () => {
@@ -34,6 +35,7 @@ const CardTable = () => {
       console.error("Error fetching cart:", error.message);
     }
   };
+  console.log("cart1",cart1);
 
   useEffect(() => {
     getCartItems();
@@ -42,10 +44,7 @@ const CardTable = () => {
 
   const handleTotal = () => {
     setTotal(
-      cart.reduce(
-        (acc, curr) => acc + Math.round(Number(curr.price)) * curr.qty,
-        0
-      )
+      cart.reduce((acc, item) => acc + item.product.price, 0)
     );
   };
 
@@ -53,7 +52,7 @@ const CardTable = () => {
   //   navigate("/order");
   // };
 
-   const handleClick = () => {
+  const handleClick = () => {
     // Place your order-related logic here
     // For now, let's just show the modal
     setShowModal(true);
@@ -101,7 +100,7 @@ const CardTable = () => {
           <tr>
             <td>Total MRP (Incl. of taxes) </td>
             {/* {cart1.map((item) => ( */}
-            <td>{cart1.totalPrice}</td>
+            <td>{total}</td>
             {/* // ))} */}
           </tr>
           <tr>
@@ -117,9 +116,9 @@ const CardTable = () => {
             {/* {cart1.map((item) => ( */}
             <td>
               {" "}
-              {cart1.totalPrice > 10000
-                ? cart1.totalPrice - 2999
-                : cart1.totalPrice}
+              {total> 10000
+                ? total - 2999
+                : total}
             </td>
             {/* // ))} */}
           </tr>
@@ -132,32 +131,22 @@ const CardTable = () => {
           {/* {cart1.map((item) => ( */}
           <td>
             {" "}
-            {cart1.totalPrice > 10000
-              ? cart1.totalPrice - 2999
-              : cart1.totalPrice}
+            {total > 10000
+              ? total - 2999
+              : total}
           </td>
           {/* //   ))} */}
         </div>
         <div>
-        <button
+          <button
             disabled={cart.length === 0 ? true : false}
             onClick={handleClick}
             style={{ backgroundColor: cart.length === 0 ? "grey" : "" }}
           >
             CONTINUE
           </button>
-
         </div>
-        {showModal && (
-        <Address 
-        handleClose={handleCloseModal}
-        />
-        
-        // <Orders
-        //   handleClose={handleCloseModal}
-        //   total={cart1.totalPrice}
-        // />
-      )}
+        {showModal && <Address handleClose={handleCloseModal} />}
       </div>
     </div>
   );

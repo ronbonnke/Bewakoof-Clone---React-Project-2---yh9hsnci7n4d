@@ -3,6 +3,7 @@ import '../styles/navbar/Navbar.css';
 import { Link, useNavigate} from 'react-router-dom';
 import { useCurrentContext } from '../context/CurrentProvider';
 // import { Link } from 'react-router-dom';
+import { LuShoppingCart } from "react-icons/lu";
 
 import SearchBar from '../components/SearchBar';
 import Suggestions from '../components/Suggestions';
@@ -57,10 +58,7 @@ console.log("cartNum",cartNum)
       <Link to="/women">Womens</Link>
       <a1><Link to="/comingsoon">MobileCovers</Link></a1>
 
-      {/* Search Bar */}
-      
-      {/* <SearchBar /> */}
-
+     
       <div className="search-bar">
         <input
           type="text"
@@ -70,8 +68,7 @@ console.log("cartNum",cartNum)
         />
       </div>
       {suggestions ?  <Suggestions suggestions={suggestions} setSuggestions={setSuggestions}/> : " "}
-     {/* <Suggestions suggestions={suggestions}/> */}
-      {/* Wishlist Icon */}
+   
       <Link to={"/wishlist"}>
       <div className="wishlist-icon">
         <img
@@ -84,10 +81,7 @@ console.log("cartNum",cartNum)
       {/* Cart Icon */}
       <Link to={"/cart"}>
       <div className="cart-icon">
-        <img
-          src="hhttps://shop.bewakoof.com/cdn/shop/t/22/assets/icon-cart-mobile.svg?v=134184629154633135331704184555"
-          alt="Cart"
-        />
+      <LuShoppingCart />
         <div className="cart-count">{cartNum}</div>
       </div></Link>
 

@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import '../styles/payments/BankCardNo.css'
 import { useNavigate } from "react-router-dom";
 import { useCurrentContext } from '../context/CurrentProvider';
+import Orders from "../pages/Orders";
+
 
 const BankCardNo = () => {
   const navigate = useNavigate();
-  const { cart, address } = useCurrentContext();
+  // const { cart, address } = useCurrentContext();
+  const {cart, setCart, address} = useCurrentContext([]);
+
   console.log("cart", cart);
 
   const [formValues, setFormValues] = useState({
@@ -14,6 +18,7 @@ const BankCardNo = () => {
     cvv: "",
     date: "",
   });
+  const [showOrders, setShowOrders] = useState(false);
   const [show, setShow] = useState(false);
 
   const handleChange = (e) => {
@@ -28,7 +33,6 @@ const BankCardNo = () => {
     
 
     try {
-      // Use Promise.all to wait for all API calls to complete
       await Promise.all(cart.map(async (item) => {
         console.log("id", item.product._id);
         const orderData = {
@@ -47,7 +51,7 @@ const BankCardNo = () => {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
-            "projectId": "ntymfpzixzjc", // Make sure this is the correct projectId and it's a string
+            "projectId": "ntymfpzixzjc",
           },
           body: JSON.stringify(orderData),
         });
@@ -55,32 +59,32 @@ const BankCardNo = () => {
         
 
         const data = await response.json();
+        setShowOrders(true);
 
         if (data.success) {
           console.log("Order submitted successfully");
-          navigate("/success");
-        } else {
-          const error = data.error || "Unknown error";
-          console.error("Order submission failed:", error);
-        }
+  
+          
+        } 
       }));
     } catch (error) {
       console.error("Network error:", error);
     }
   };
 
-  const handleClose = () => {
-    setShow(false);
-    navigate("/");
+ 
+
+  const handleCloseOrders = () => {
+    setShowOrders(false);
   };
+  // const handleClose = () => {
+  //   setShowOrders(false);
+  // };
+
 
   return (
     <div>
-      {/* <SuccessModal */}
-      {/* show={show} */}
-      {/* handleClose={handleClose} */}
-      {/* message={"Your Payment Was Successfully completed "} */}
-      {/* /> */}
+
       <form onSubmit={handleSubmit} className="modelpayment">
         <div className="mb">
           <label htmlFor="formBasicEmail" className="form-label">
@@ -154,10 +158,17 @@ const BankCardNo = () => {
           number.
         </p>
         <button type="submit" className="bon">
-          Submit
+          Submit 
         </button>
       </form>
+
+      {showOrders ? <Orders
+          handleClose={handleCloseOrders}
+          total={cart.reduce((acc, item) => acc + item.product.price, 0)}
+        /> :"" }
+
     </div>
+      
   );
 };
 
