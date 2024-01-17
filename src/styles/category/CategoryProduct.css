@@ -36,3 +36,42 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media only screen and (min-width: 250px) and (max-width: 500px) {
+  .category-container {
+    display: flex;
+    /* max-width: 100%; */
+    overflow-x: auto;
+    /* padding: 10px; */
+    justify-content: space-between;
+    margin: 6px;
+  }
+
+  .category-item {
+    /* padding: 10px; */
+    flex-shrink: 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .category-item:hover {
+    background-color: #f0f0f0;
+  }
+
+  .category-container-image {
+    height: 240px;
+    width: 170px;
+    background-color: lightblue;
+    /* margin-top: 10px; */
+    overflow: hidden;
+    border-radius: 5px;
+    object-fit: contain;
+  }
+
+  .category-container-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

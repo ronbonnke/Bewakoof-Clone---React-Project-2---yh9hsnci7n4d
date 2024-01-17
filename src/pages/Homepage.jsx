@@ -6,7 +6,7 @@ import Banner from '../components/Banner';
 import TrendingCategories from '../components/TrendingCategories';
 import BewakoofOriginals from '../components/BewakoofOriginals';
 import { useCurrentContext } from '../context/CurrentProvider';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -85,9 +85,9 @@ const Homepage = () => {
       <div> <Banner /> </div>
       <div> <TrendingCategories /> </div>
       <div> <BewakoofOriginals /> </div>
-
+{/* 
       <div>
-        <Link to={"/password"}>forgot</Link></div>
+        <Link to={"/password"}>forgot</Link></div> */}
     </div>
   );
 };

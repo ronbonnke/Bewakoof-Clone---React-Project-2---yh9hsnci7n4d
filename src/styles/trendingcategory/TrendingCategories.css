@@ -35,7 +35,7 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 320px) {
+@media only screen and (min-width: 250px) and (max-width: 500px) {
   .trending-categories-heading {
     text-align: center;
     margin-bottom: 20px;
@@ -45,7 +45,6 @@
   .trending-categories-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
     margin: auto;
     overflow-x: auto;
@@ -60,7 +59,7 @@
 
   .trending-categories-image-container {
     height: 80px;
-    width: 120px;
+    width: 140px;
     overflow: hidden;
     border-radius: 10px;
   }
