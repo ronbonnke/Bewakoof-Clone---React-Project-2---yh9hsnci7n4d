@@ -5,12 +5,12 @@ const ComingSoon = () => {
   return (
     <div className="coming-soon-container">
       <img
-        src="https://entrackr.com/storage/2023/04/bewakoof.png" 
-        alt="Coming Soon Background"
+        src="https://wallpaperxyz.com/wp-content/uploads/Nice-BG-Wallpaper-Full-HD-Free-Download-for-Desktop-Laptop-Macbook-2110-Wallpaperxyz.com-13.jpg" 
         className="background-image"
       />
       <div className="text-overlay">
-        <h1>COMING SOON..</h1>
+        <h3>COMING SOON</h3>
+        <h6>WEBSITE UNDER CONSTRUCTION 🚧 ⛏️.. </h6>
       </div>
     </div>
   );
