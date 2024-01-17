@@ -57,7 +57,7 @@
   font-size: 14px;
 }
 
-@media only screen and (min-width: 411px) and (max-width: 800px) {
+@media only screen and (min-width: 250px) and (max-width: 500px) {
   .modelpayment {
     max-width: 100%;
   }
