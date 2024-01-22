@@ -16,6 +16,7 @@ const Login = () => {
   const { setLoginStatus, loginStatus } = useCurrentContext();
 
   console.log("loginStatus", loginStatus);
+
   const handlePassword = (event) => {
     setPassword(event.target.value);
   };
@@ -69,6 +70,13 @@ const Login = () => {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      // Call the handleLogin function directly
+      handleLogin(event);
+    }
+  };
+
   return (
     <div className="container-l">
       <form>
@@ -88,6 +96,7 @@ const Login = () => {
           placeholder="Enter Your Email"
           value={email}
           onChange={handleEmail}
+
         />
         <br />
 
@@ -97,6 +106,8 @@ const Login = () => {
           placeholder="Password"
           value={password}
           onChange={handlePassword}
+          onKeyDown={handleKeyDown}
+
         />
         <br />
         <div className="error">{error}</div>

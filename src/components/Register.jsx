@@ -1,15 +1,18 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/register/Register.css";
 
-const Register = ({ setLoggedInStatus, setUserName, setEMail }) => {
+const Register = () => {
   const [error, setError] = useState("");
   const [username, setUsername] = useState();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [color, setColor] = useState("");
   const [sign, setSign] = useState("");
+
+  const navigate = useNavigate();
+
 
   const handleUsername = (event) => {
     setUsername(event.target.value);
@@ -22,6 +25,7 @@ const Register = ({ setLoggedInStatus, setUserName, setEMail }) => {
   const handleEmail = (event) => {
     setEmail(event.target.value);
   };
+
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -64,11 +68,10 @@ const Register = ({ setLoggedInStatus, setUserName, setEMail }) => {
               })
             );
             setError("Registered successfully");
+            navigate("/login");
             setColor("green");
             setSign(true);
-            setUserName(username);
-            setEMail(email);
-            setLoggedInStatus(true);
+           
           } else {
             console.log("Registration Failed", response);
             setError("Incorrect Email or password");
@@ -122,6 +125,7 @@ const Register = ({ setLoggedInStatus, setUserName, setEMail }) => {
         />
         <br />
         <div className="error">{error}</div>
+        
 
         {sign ? (
           <></>
