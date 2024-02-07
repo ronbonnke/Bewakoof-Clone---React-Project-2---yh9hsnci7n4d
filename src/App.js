@@ -21,6 +21,7 @@ import Orders from "./pages/Orders";
 import Address from "./pages/Address";
 import Payment from "./pages/Payment";
 import PaymentMethod from "./components/PaymentMethod";
+import OrderDetail from "./pages/OrderDetail";
 function App() {
   return (
     <Router>
@@ -47,6 +48,7 @@ function App() {
             <Route path="/address" element={<Address />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/paymentmethod" element={<PaymentMethod />} />
+            <Route path="/orderdetailpage" element={<OrderDetail />} />
           </Routes>
         </div>
         <div className="my-footer">
